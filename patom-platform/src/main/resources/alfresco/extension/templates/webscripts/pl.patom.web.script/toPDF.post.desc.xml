@@ -1,0 +1,8 @@
+<webscript>
+	<shortname>Transform to PDF</shortname>
+	<description>Transform to PDF</description>
+	<url>/api/patom/action/toPDF</url>
+	<format default="json"/>
+	<authentication>user</authentication>
+	<transaction>required</transaction>
+</webscript>

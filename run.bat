@@ -96,7 +96,10 @@ EXIT /B 0
     )
 EXIT /B 0
 :build
+  SET JAVA_HOME=C:\Program Files\OpenJDK\jdk-17
 	call %MVN_EXEC% clean package
+  @REM as java11 is default for majority of my projects
+  SET JAVA_HOME=C:\Program Files\Zulu\zulu-11
 EXIT /B 0
 :build_share
     docker-compose -f "%COMPOSE_FILE_PATH%" kill patom-share

@@ -9,8 +9,10 @@ COPY Dockerfile extensions/*.jar $TOMCAT_DIR/webapps/alfresco/WEB-INF/lib/
 
 # Copy Dockerfile to avoid an error if no AMPs exist
 COPY Dockerfile extensions/*.amp $TOMCAT_DIR/amps/
-RUN java -jar $TOMCAT_DIR/alfresco-mmt/alfresco-mmt*.jar install \
-              $TOMCAT_DIR/amps $TOMCAT_DIR/webapps/alfresco -directory -nobackup -force
+RUN echo 'java -jar $TOMCAT_DIR/alfresco-mmt/alfresco-mmt*.jar install $TOMCAT_DIR/amps/$1 $TOMCAT_DIR/webapps/alfresco -force -nobackup' > install_amp.sh && chmod +x install_amp.sh && \
+        ./install_amp.sh javascript-console-repo-*.amp && \
+        ./install_amp.sh polish-repo-*.amp && \
+        rm install_amp.sh
 
 COPY alfresco-global.properties $TOMCAT_DIR/shared/classes/alfresco-global.properties
 COPY dev-log4j.properties $TOMCAT_DIR/shared/classes/alfresco/extension

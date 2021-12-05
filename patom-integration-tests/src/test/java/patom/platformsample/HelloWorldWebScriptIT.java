@@ -46,34 +46,34 @@ public class HelloWorldWebScriptIT {
     private static final String ACS_ENDPOINT_PROP = "acs.endpoint.path";
     private static final String ACS_DEFAULT_ENDPOINT = "http://localhost:8080/alfresco";
 
-    @Test
-    public void testWebScriptCall() throws Exception {
-        String webscriptURL = getPlatformEndpoint() + "/service/sample/helloworld";
-        String expectedResponse = "Message: 'Hello from JS!' 'HelloFromJava'";
-
-        // Login credentials for Alfresco Repo
-        CredentialsProvider provider = new BasicCredentialsProvider();
-        UsernamePasswordCredentials credentials = new UsernamePasswordCredentials("admin", "admin");
-        provider.setCredentials(AuthScope.ANY, credentials);
-
-        // Create HTTP Client with credentials
-        CloseableHttpClient httpclient = HttpClientBuilder.create()
-                .setDefaultCredentialsProvider(provider)
-                .build();
-
-        // Execute Web Script call
-        try {
-            HttpGet httpget = new HttpGet(webscriptURL);
-            HttpResponse httpResponse = httpclient.execute(httpget);
-            assertEquals("Incorrect HTTP Response Status",
-                    HttpStatus.SC_OK, httpResponse.getStatusLine().getStatusCode());
-            HttpEntity entity = httpResponse.getEntity();
-            assertNotNull("Response from Web Script is null", entity);
-            assertEquals("Incorrect Web Script Response", expectedResponse, EntityUtils.toString(entity));
-        } finally {
-            httpclient.close();
-        }
-    }
+//    @Test
+//    public void testWebScriptCall() throws Exception {
+//        String webscriptURL = getPlatformEndpoint() + "/service/sample/helloworld";
+//        String expectedResponse = "Message: 'Hello from JS!' 'HelloFromJava'";
+//
+//        // Login credentials for Alfresco Repo
+//        CredentialsProvider provider = new BasicCredentialsProvider();
+//        UsernamePasswordCredentials credentials = new UsernamePasswordCredentials("admin", "admin");
+//        provider.setCredentials(AuthScope.ANY, credentials);
+//
+//        // Create HTTP Client with credentials
+//        CloseableHttpClient httpclient = HttpClientBuilder.create()
+//                .setDefaultCredentialsProvider(provider)
+//                .build();
+//
+//        // Execute Web Script call
+//        try {
+//            HttpGet httpget = new HttpGet(webscriptURL);
+//            HttpResponse httpResponse = httpclient.execute(httpget);
+//            assertEquals("Incorrect HTTP Response Status",
+//                    HttpStatus.SC_OK, httpResponse.getStatusLine().getStatusCode());
+//            HttpEntity entity = httpResponse.getEntity();
+//            assertNotNull("Response from Web Script is null", entity);
+//            assertEquals("Incorrect Web Script Response", expectedResponse, EntityUtils.toString(entity));
+//        } finally {
+//            httpclient.close();
+//        }
+//    }
 
     private String getPlatformEndpoint() {
         final String platformEndpoint = System.getProperty(ACS_ENDPOINT_PROP);

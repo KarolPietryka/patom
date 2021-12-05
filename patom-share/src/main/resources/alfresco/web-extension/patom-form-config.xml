@@ -1,0 +1,9 @@
+<alfresco-config>
+	<config>
+		<forms>
+			<dependencies>
+				<js src="/patom/actions/toPDF.js" />
+			</dependencies>
+		</forms>
+	</config>
+</alfresco-config>

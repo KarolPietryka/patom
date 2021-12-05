@@ -22,5 +22,15 @@
          </list>
       </property>
    </bean>
-
+   <!-- Add module specific messages and labels -->
+   <bean id="ost.beone.zz-ostsped-aio-share.config"
+         class="org.springframework.extensions.config.ConfigBootstrap"
+         init-method="register">
+        <property name="configService" ref="web.config" />
+        <property name="configs">
+            <list>
+                <value>classpath:alfresco/web-extension/patom-form-config.xml</value>
+            </list>
+        </property>
+    </bean>
 </beans>

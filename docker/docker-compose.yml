@@ -2,6 +2,7 @@ version: '3.4'
 services:
   patom-share:
     image: alfresco-share-patom:development
+    container_name: patom_share
     build:
       dockerfile: ./Dockerfile
       context: ../../../patom-share-docker/target
@@ -14,6 +15,7 @@ services:
       - "${share.debug.port}:8888"
   patom-acs:
     image: alfresco-content-services-patom:development
+    container_name: patom_acs
     build:
       dockerfile: ./Dockerfile
       context: ../../../patom-platform-docker/target
@@ -29,6 +31,7 @@ services:
       - patom-postgres
   patom-postgres:
     image: postgres:9.6
+    container_name: patom_postgres
     environment:
       POSTGRES_DB: alfresco
       POSTGRES_USER: alfresco
@@ -40,6 +43,7 @@ services:
       - patom-db-volume:/var/lib/postgresql/data
   patom-ass:
     image: alfresco/alfresco-search-services:1.2.0
+    container_name: patom_ass
     environment:
       SOLR_ALFRESCO_HOST: patom-acs
       SOLR_ALFRESCO_PORT: 8080

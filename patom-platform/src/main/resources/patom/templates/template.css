@@ -1,0 +1,108 @@
+@media print {
+    body{
+        width: 21cm;
+        height: 29.7cm;
+        margin: 30mm 45mm 30mm 45mm;
+        /* change the margins as you want them to be. */
+   }
+}
+#front_page-header{
+  background-color:#5097c4;
+  height: 2.5em;
+}
+
+#front_page-header .letters{
+  color: white;
+  text-align: center;
+  font-size: xx-large;
+}
+
+#doc_introduction {
+  font-weight: normal;
+  text-align-last: left;
+}
+#doc_introduction p{
+  margin-bottom: 0px;
+  margin-top: 15px;
+}
+
+#table_introduction{
+  width: 60%;
+  float: left;
+}
+  #table_introduction #table_info{
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 0px;
+    font-size: xx-large;
+  }
+  #table_introduction table{
+    width:100%;
+  }
+
+#farm_introduction{
+  width: 40%;
+  float: right;
+  margin-top: 10px;
+}
+  #farm_introduction #farm_introduction_tab{
+  border-collapse: separate;
+  border-spacing: 1em;
+  width:100%
+  }
+.tg  {
+  border-collapse:collapse;
+  border-spacing:0;
+  width: 100%;
+}
+  .tg td{
+    border-color: black;
+    border-style: solid;
+    border-width: 0.3px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 0.4em 1em;
+    word-break: normal;
+  }
+    .tg td.tg-30{
+      width: 30%;
+    }
+    .tg td.tg-20{
+      width: 20%;
+    }
+    .tg td.tg-40{
+      width: 40;
+    }
+    .tg th.th-50{
+      width: 50%;
+    }
+    .tg th.th-70{
+      width: 70%;;
+    }
+    .tg th.th-90{
+      width: 90%;
+    }
+    .tg td.tg-bold{
+      font-weight:bold;
+      text-align: center;
+    }
+    .tg td.tg-cent{
+      text-align: center;
+    }
+    .tg td.tg-no_bot_bor{
+      border-bottom: none;
+    }
+    .tg td.tg-no_top_bor{
+      border-top: none;
+    }
+    .tg th{
+      border-color: black;
+      border-style: solid;
+      border-width: 0.3px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      overflow: hidden;
+      /* padding: 2em 9em; */
+      word-break: normal;
+    }

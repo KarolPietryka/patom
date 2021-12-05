@@ -22,6 +22,18 @@
             <artifactId>patom-share</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>pl.beone.modules</groupId>
+            <artifactId>polish-share-amp</artifactId>
+            <version>${polish.version}</version>
+            <type>amp</type>
+        </dependency>
+        <dependency>
+            <groupId>de.fmaul</groupId>
+            <artifactId>javascript-console-share</artifactId>
+            <version>${javascript-console.version}</version>
+            <type>amp</type>
+        </dependency>
     </dependencies>
 
     <build>
