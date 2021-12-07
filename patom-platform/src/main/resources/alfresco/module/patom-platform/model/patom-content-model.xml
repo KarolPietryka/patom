@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="pt:contentModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+    <!-- Optional meta-data about the model -->
+    <description>Patom document model</description>
+    <author>Karol Pietryka</author>
+    <version>1.0</version>
+
+    <imports>
+        <!-- Import Alfresco Dictionary Definitions -->
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+        <!-- Import Alfresco Content Domain Model Definitions -->
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+        <!-- Import Alfresco System Model Definitions -->
+        <import uri="http://www.alfresco.org/model/system/1.0" prefix="sys"/>
+    </imports>
+
+    <!-- Custom namespace for the ACME company -->
+    <namespaces>
+        <namespace uri="http://www.patom.pl/model/content/1.0" prefix="pt"/>
+    </namespaces>
+
+<!--    <constraints>-->
+<!--    </constraints>-->
+
+    <!-- ===============================================================================================================
+        Constraints, Types, and Aspects go here...
+        -->
+
+    <types>
+        <type name="pt:document">
+            <title>Patom document type</title>
+            <parent>cm:content</parent>
+            <properties>
+                <property name="pt:documentId">
+                    <title>Document Identification Number</title>
+                    <type>d:text</type>
+                </property>
+            </properties>
+<!--            <mandatory-aspects>-->
+<!--            </mandatory-aspects>-->
+        </type>
+        <type name="pt:foodSupplyChainDocument">
+            <title>Dokument łańcucha żywieniowego zwierząt do uboju</title>
+            <parent>pt:document</parent>
+            <mandatory-aspects>
+                <aspect>pt:farmOwner</aspect>
+                <aspect>pt:farm</aspect>
+                <aspect>pt:herd</aspect>
+                <aspect>pt:herdTreatment</aspect>
+                <aspect>pt:wet</aspect>
+                <aspect>pt:farmHistoricMedicalIssues</aspect>
+                <aspect>pt:foodSupply</aspect>
+            </mandatory-aspects>
+        </type>
+    </types>
+    <aspects>
+        <aspect name="pt:farmOwner">
+            <properties>
+                <property name="pt:farmOwnerFirstName">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:farmOwnerSurname">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:farmOwnerNIP">
+                    <type>d:int</type>
+                </property>
+            </properties>
+        </aspect>
+        <aspect name="pt:farm">
+            <properties>
+                <property name="pt:farmZipCode">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:farmCity">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:farmStreet">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:farmId">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:farmBreedingGroundAddress">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:farmBreedingGroundNAme">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:farmBreedingGroundId">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:farmBreedingGroundInfo">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:ifHerdWellBeingProvided">
+                    <type>d:boolean</type>
+                </property>
+            </properties>
+        </aspect>
+        <aspect name="pt:herd">
+            <properties>
+                <property name="pt:herdRace">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:herdQuantity">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:herdData">
+                    <type>d:text</type>
+                </property>
+            </properties>
+        </aspect>
+        <aspect name="pt:herdTreatment">
+            <properties>
+                <property name="pt:herdMedicals">
+                    <type>d:text</type>
+                    <multiple>true</multiple>
+                </property>
+                <property name="pt:herdMedicalsTreatmentDates">
+                    <type>d:datetime</type>
+                    <multiple>true</multiple>
+                </property>
+            </properties>
+        </aspect>
+        <aspect name="pt:wet">
+            <properties>
+                <property name="pt:wetSurname">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:wetCity">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:wetPhoneNumber">
+                    <type>d:text</type>
+                </property>
+            </properties>
+        </aspect>
+        <aspect name="pt:farmHistoricMedicalIssues">
+            <properties>
+                <property name="pt:ifAnyMedicalIssuesInPass">
+                    <type>d:boolean</type>
+                </property>
+                <property name="pt:historicTreatRace">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:historicIssues">
+                    <type>d:boolean</type>
+                </property>
+                <property name="pt:historicDiseaseDurationTo">
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:ifAnyMedicalIssuesInButcheredHerds">
+                    <type>d:boolean</type>
+                </property>
+                <property name="pt:historicDiseaseInButcheredHerds">
+                    <type>d:text</type>
+                </property>
+            </properties>
+        </aspect>
+        <aspect name="pt:foodSupply">
+            <properties>
+                <property name="pt:starterFeedTimeFrom">
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:starterFeedTimeTo">
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:growerFeedTimeFrom">
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:growerFeedTimeTo">
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:finisherFeedTimeFrom">
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:finisherFeedTimeTo">
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:starterName">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:growerName">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:finisherName">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:foodSource">
+                    <type>d:text</type>
+                </property>
+            </properties>
+        </aspect>
+    </aspects>
+
+<!--    <aspects>-->
+<!--    </aspects>-->
+
+</model>
