@@ -36,6 +36,12 @@
                     <title>Document Identification Number</title>
                     <type>d:text</type>
                 </property>
+                <property name="pt:signCity">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:signDate">
+                    <type>d:date</type>
+                </property>
             </properties>
 <!--            <mandatory-aspects>-->
 <!--            </mandatory-aspects>-->
@@ -85,13 +91,10 @@
                 <property name="pt:farmBreedingGroundAddress">
                     <type>d:text</type>
                 </property>
-                <property name="pt:farmBreedingGroundNAme">
+                <property name="pt:farmBreedingGroundName">
                     <type>d:text</type>
                 </property>
                 <property name="pt:farmBreedingGroundId">
-                    <type>d:text</type>
-                </property>
-                <property name="pt:farmBreedingGroundInfo">
                     <type>d:text</type>
                 </property>
                 <property name="pt:ifHerdWellBeingProvided">
@@ -119,6 +122,14 @@
                     <multiple>true</multiple>
                 </property>
                 <property name="pt:herdMedicalsTreatmentDates">
+                    <type>d:datetime</type>
+                    <multiple>true</multiple>
+                </property>
+                <property name="pt:herdMedicalsApplyingDatesFrom">
+                    <type>d:datetime</type>
+                    <multiple>true</multiple>
+                </property>
+                <property name="pt:herdMedicalsApplyingDatesTo">
                     <type>d:datetime</type>
                     <multiple>true</multiple>
                 </property>
