@@ -1,0 +1,236 @@
+<alfresco-config>
+
+   <!-- cm:content type (existing nodes) -->
+    <config evaluator="node-type" condition="pt:document">
+        <forms>
+            <form>
+                <field-visibility>
+<!--                <show id="pt:documentId"/>-->
+<!--                <show id="pt:signCity"/>-->
+                <show id="pt:signDate"/>
+                <show id="pt:farmOwnerFirstName"/>
+                <show id="pt:farmOwnerSurname"/>
+                <show id="pt:farmOwnerNIP"/>
+                <show id="pt:farmZipCode"/>
+                <show id="pt:farmCity"/>
+                <show id="pt:farmStreet"/>
+                <show id="pt:farmId"/>
+                <show id="pt:farmBreedingGroundAddress"/>
+                <show id="pt:farmBreedingGroundName"/>
+                <show id="pt:farmBreedingGroundId"/>
+                <show id="pt:ifHerdWellBeingProvided"/>
+                <show id="pt:herdRace"/>
+                <show id="pt:herdQuantity"/>
+                <show id="pt:herdDeploymenDate"/>
+                <show id="pt:herdMedicals"/>
+                <show id="pt:herdMedicalsTreatmentDates"/>
+                <show id="pt:herdMedicalsApplyingDatesFrom"/>
+                <show id="pt:herdMedicalsApplyingDatesTo"/>
+                <show id="pt:wetSurname"/>
+                <show id="pt:wetCity"/>
+                <show id="pt:wetPhoneNumber"/>
+                <show id="pt:ifAnyMedicalIssues"/>
+                <show id="pt:treatRace"/>
+                <show id="pt:historicIssues"/>
+                <show id="pt:historicDiseaseDurationTo"/>
+                <show id="pt:ifAnyMedicalIssuesInButcheredHerds"/>
+                <show id="pt:historicDiseaseInButcheredHerds"/>
+                <show id="pt:starterFeedTimeFrom"/>
+                <show id="pt:starterFeedTimeTo"/>
+                <show id="pt:growerFeedTimeFrom"/>
+                <show id="pt:growerFeedTimeTo"/>
+                <show id="pt:finisherFeedTimeFrom"/>
+                <show id="pt:finisherFeedTimeTo"/>
+                <show id="pt:starterName"/>
+                <show id="pt:growerName"/>
+                <show id="pt:finisherName"/>
+                <show id="pt:foodSource"/>
+                </field-visibility>
+                <appearance>
+                    <field id="pt:signDate">
+                        <control template="/org/alfresco/components/form/controls/date.ftl">
+                            <control-param name="showTime">false</control-param>
+                        </control>
+                    </field>
+                    <field id="pt:farmOwnerFirstName">
+                        <control template="/org/alfresco/components/form/controls/selectone.ftl">
+                            <control-param name="options">
+                               Patrycja|Tomek
+                            </control-param>
+                        </control>
+                    </field>
+                    <field id="pt:farmOwnerSurname">
+                        <control template="/org/alfresco/components/form/controls/selectone.ftl">
+                            <control-param name="options">
+                               Pietryka|Kowalski
+                            </control-param>
+                        </control>
+                    </field>
+                    <field id="pt:farmOwnerNIP">
+                        <control template="/org/alfresco/components/form/controls/selectone.ftl">
+                            <control-param name="options">
+                               12334456|98765434|766545678|9998865534
+                            </control-param>
+                        </control>
+                    </field>
+                    <field id="pt:farmZipCode">
+                        <control template="/org/alfresco/components/form/controls/selectone.ftl">
+                            <control-param name="options">
+                               64-310|64-311|64-987
+                            </control-param>
+                        </control>
+                    </field>
+                    <field id="pt:farmCity">
+                        <control template="/org/alfresco/components/form/controls/selectone.ftl">
+                            <control-param name="options">
+                               Lwówek|Posadowo|Józefowo
+                            </control-param>
+                        </control>
+                    </field>
+                    <field id="pt:farmStreet">
+                        <control template="/org/alfresco/components/form/controls/selectone.ftl">
+                            <control-param name="options">
+                               Al. Sczanieckiej 34|Posadowska 2|Muska 13/3
+                            </control-param>
+                        </control>
+                    </field>
+                    <field id="pt:farmId">
+                        <control template="/org/alfresco/components/form/controls/selectone.ftl">
+                            <control-param name="options">
+                               1|2|3|4|5
+                            </control-param>
+                        </control>
+                    </field>
+                    <field id="pt:farmBreedingGroundAddress">
+                        <control template="/org/alfresco/components/form/controls/selectone.ftl">
+                            <control-param name="options">
+                               Al. Sczanieckiej 34|Posadowska 2|Muska 13/3
+                            </control-param>
+                        </control>
+                    </field>
+                    <field id="pt:farmBreedingGroundName">
+                        <control template="/org/alfresco/components/form/controls/selectone.ftl">
+                            <control-param name="options">
+                               Chicken Slayer| Killing Floor| Chicken Heaven
+                            </control-param>
+                        </control>
+                    </field>
+                    <field id="pt:farmBreedingGroundId">
+                        <control template="/org/alfresco/components/form/controls/selectone.ftl">
+                            <control-param name="options">
+                               12-HY|34-PO|21-XX
+                            </control-param>
+                        </control>
+                    </field>
+                    <field id="pt:ifHerdWellBeingProvided">
+                        <control template="/org/alfresco/components/form/controls/checkbox.ftl" />
+                    </field>
+                    <field id="pt:herdRace">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="pt:herdQuantity">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="pt:herdDeploymenDate">
+                        <control template="/org/alfresco/components/form/controls/date.ftl">
+                            <control-param name="showTime">false</control-param>
+                        </control>
+                    </field>
+                    <field id="pt:herdMedicals">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="pt:herdMedicalsTreatmentDates">
+                        <control template="/org/alfresco/components/form/controls/date.ftl">
+                            <control-param name="showTime">false</control-param>
+                        </control>
+                    </field>
+                    <field id="pt:herdMedicalsApplyingDatesFrom">
+                        <control template="/org/alfresco/components/form/controls/date.ftl">
+                            <control-param name="showTime">false</control-param>
+                        </control>
+                    </field>
+                    <field id="pt:herdMedicalsApplyingDatesTo">
+                        <control template="/org/alfresco/components/form/controls/date.ftl">
+                            <control-param name="showTime">false</control-param>
+                        </control>
+                    </field>
+                    <field id="pt:wetSurname">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="pt:wetCity">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="pt:wetPhoneNumber">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="pt:ifAnyMedicalIssues">
+                        <control template="/org/alfresco/components/form/controls/checkbox.ftl" />
+                    </field>
+                    <field id="pt:treatRace">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="pt:historicIssues">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="pt:historicDiseaseDurationTo">
+                        <control template="/org/alfresco/components/form/controls/date.ftl">
+                            <control-param name="showTime">false</control-param>
+                        </control>
+                    </field>
+                    <field id="pt:ifAnyMedicalIssuesInButcheredHerds">
+                        <control template="/org/alfresco/components/form/controls/checkbox.ftl" />
+                    </field>
+                    <field id="pt:historicDiseaseInButcheredHerds">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="pt:starterFeedTimeFrom">
+                        <control template="/org/alfresco/components/form/controls/date.ftl">
+                            <control-param name="showTime">false</control-param>
+                        </control>
+                    </field>
+                    <field id="pt:starterFeedTimeTo">
+                        <control template="/org/alfresco/components/form/controls/date.ftl">
+                            <control-param name="showTime">false</control-param>
+                        </control>
+                    </field>
+                    <field id="pt:growerFeedTimeFrom">
+                        <control template="/org/alfresco/components/form/controls/date.ftl">
+                            <control-param name="showTime">false</control-param>
+                        </control>
+                    </field>
+                    <field id="pt:growerFeedTimeTo">
+                        <control template="/org/alfresco/components/form/controls/date.ftl">
+                            <control-param name="showTime">false</control-param>
+                        </control>
+                    </field>
+                    <field id="pt:finisherFeedTimeFrom">
+                        <control template="/org/alfresco/components/form/controls/date.ftl">
+                            <control-param name="showTime">false</control-param>
+                        </control>
+                    </field>
+                    <field id="pt:finisherFeedTimeTo">
+                        <control template="/org/alfresco/components/form/controls/date.ftl">
+                            <control-param name="showTime">false</control-param>
+                        </control>
+                    </field>
+                    <field id="pt:starterName">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="pt:growerName">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="pt:finisherName">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="pt:foodSource">
+                        <control template="/org/alfresco/components/form/controls/selectone.ftl">
+                            <control-param name="options">
+                               Własna|Z zakupu
+                            </control-param>
+                        </control>
+                    </field>
+                </appearance>
+            </form>
+        </forms>
+    </config>
+</alfresco-config>

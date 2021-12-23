@@ -37,6 +37,7 @@ import org.springframework.stereotype.Component
 import org.xhtmlrenderer.pdf.ITextRenderer;
 import pl.patom.model.rest.request.ToPDFRequest
 import java.io.OutputStream
+import pl.patom.model.*
 
 @Component("webscript.pl.patom.web.script.toPDF.post")
 class ToPDF @Autowired constructor(
@@ -81,7 +82,7 @@ class ToPDF @Autowired constructor(
                 fileFolderService.resolveNamePath(
                     nodeLocatorService.getNode("companyhome", null, null),
                     htmlTemplatesPaths.split(patomPathSeparator)
-                ).nodeRef, ContentModel.ASSOC_CONTAINS, ContentModel.ASSOC_CONTAINS, ContentModel.TYPE_CONTENT)
+                ).nodeRef, ContentModel.ASSOC_CONTAINS, ContentModel.ASSOC_CONTAINS, TYPE_PATOM_DOCUMENT)
             val pdfFileContentWriter = contentService.getWriter(pdfFile.childRef, ContentModel.PROP_CONTENT,true);
             pdfFileContentWriter.mimetype = "application/pdf";
             val myNodeOut = pdfFileContentWriter.contentOutputStream
