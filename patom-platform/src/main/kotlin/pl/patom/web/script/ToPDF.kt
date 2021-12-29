@@ -89,15 +89,6 @@ class ToPDF @Autowired constructor(
             try {
                 renderer.createPDF(myNodeOut)
                 myNodeOut.close()
-//                Files.newOutputStream(Paths.get(outputPDFFile)).use { os ->
-//                    renderer.createPDF(os)
-//                    os.close()
-                    //val reader = PdfReader(outputPDFFile)
-                    //boas = ByteArrayOutputStream()
-                    //val stamper = PdfStamper(reader, boas)
-                    //stamper.setPageAction(PdfWriter.PAGE_OPEN, PdfAction(PdfAction.PRINTDIALOG), 1)
-                    //stamper.close()
-//                }
             } catch (ex: DocumentException) {
                 LOG.error{ex}
             }
