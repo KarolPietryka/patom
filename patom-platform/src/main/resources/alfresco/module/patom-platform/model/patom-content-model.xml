@@ -43,8 +43,15 @@
                     <type>d:date</type>
                 </property>
             </properties>
-<!--            <mandatory-aspects>-->
-<!--            </mandatory-aspects>-->
+            <mandatory-aspects>
+                <aspect>pt:farmOwner</aspect>
+                <aspect>pt:farm</aspect>
+                <aspect>pt:herd</aspect>
+                <aspect>pt:herdTreatment</aspect>
+                <aspect>pt:wet</aspect>
+                <aspect>pt:herdHistoricMedicalIssues</aspect>
+                <aspect>pt:foodSupply</aspect>
+            </mandatory-aspects>
         </type>
         <type name="pt:foodSupplyChainDocument">
             <title>Dokument łańcucha żywieniowego zwierząt do uboju</title>

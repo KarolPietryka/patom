@@ -17,7 +17,7 @@
         <property name="labels">
             <list>
                 <!-- Bootstrap Resource Bundles for the content model types, aspects, properties etc -->
-                <value>alfresco/module/${project.artifactId}/messages/content-model</value>
+                <value>alfresco/module/${project.artifactId}/messages/patom-content-model</value>
             </list>
         </property>
     </bean>

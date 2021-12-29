@@ -55,70 +55,70 @@
                     <field id="pt:farmOwnerFirstName">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
-                               Patrycja|Tomek
+                               -1|Patrycja,1|Tomek
                             </control-param>
                         </control>
                     </field>
                     <field id="pt:farmOwnerSurname">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
-                               Pietryka|Kowalski
+                               -1|Pietryka,1|Kowalski
                             </control-param>
                         </control>
                     </field>
                     <field id="pt:farmOwnerNIP">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
-                               12334456|98765434|766545678|9998865534
+                               -1|12334456,1|98765434,2|766545678,3|9998865534
                             </control-param>
                         </control>
                     </field>
                     <field id="pt:farmZipCode">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
-                               64-310|64-311|64-987
+                               -1|64-310,1|64-311|64-987
                             </control-param>
                         </control>
                     </field>
                     <field id="pt:farmCity">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
-                               Lwówek|Posadowo|Józefowo
+                               -1|Lwówek,1|Posadowo,2|Józefowo
                             </control-param>
                         </control>
                     </field>
                     <field id="pt:farmStreet">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
-                               Al. Sczanieckiej 34|Posadowska 2|Muska 13/3
+                               -1|Al. Sczanieckiej 34,1|Posadowska 2,2|Muska 13/3
                             </control-param>
                         </control>
                     </field>
                     <field id="pt:farmId">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
-                               1|2|3|4|5
+                               -1|1,1|2,2|3,3|4,4|5
                             </control-param>
                         </control>
                     </field>
                     <field id="pt:farmBreedingGroundAddress">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
-                               Al. Sczanieckiej 34|Posadowska 2|Muska 13/3
+                               -1|Al. Sczanieckiej 34,1|Posadowska 2,2|Muska 13/3
                             </control-param>
                         </control>
                     </field>
                     <field id="pt:farmBreedingGroundName">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
-                               Chicken Slayer| Killing Floor| Chicken Heaven
+                               -1|Chicken Slayer,1|Killing Floor,2|Chicken Heaven
                             </control-param>
                         </control>
                     </field>
                     <field id="pt:farmBreedingGroundId">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
-                               12-HY|34-PO|21-XX
+                               -1|12-HY,1|34-PO,2|21-XX
                             </control-param>
                         </control>
                     </field>
@@ -225,7 +225,7 @@
                     <field id="pt:foodSource">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
-                               Własna|Z zakupu
+                               -1|Własna,1|Z zakupu
                             </control-param>
                         </control>
                     </field>
