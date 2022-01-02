@@ -35,9 +35,11 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component
 import org.xhtmlrenderer.pdf.ITextRenderer;
+import pl.patom.HTMLModifierService
+import pl.patom.context.html.modifier.HTMLModifierContext
 import pl.patom.model.rest.request.ToPDFRequest
 import java.io.OutputStream
-import pl.patom.model.*
+import pl.patom.model.TYPE_PATOM_DOCUMENT
 
 @Component("webscript.pl.patom.web.script.toPDF.post")
 class ToPDF @Autowired constructor(
@@ -46,7 +48,8 @@ class ToPDF @Autowired constructor(
     private val fileFolderService: FileFolderService,
     private val nodeLocatorService: NodeLocatorService,
     @Value("\${patom.htmlTemplates.path}") private val htmlTemplatesPaths: String,
-    @Value("\${patom.general.pathSeparator}") private val patomPathSeparator: String
+    @Value("\${patom.general.pathSeparator}") private val patomPathSeparator: String,
+    private val htmlModifierService: HTMLModifierService
 )
 : AbstractWebScript() {
     private val htmlTemplateFullPath : List<String>
@@ -74,8 +77,8 @@ class ToPDF @Autowired constructor(
             val htmlTemplatePathContent = contentService.getReader(templateNodeRef, ContentModel.PROP_CONTENT)
             val document = Jsoup.parse(htmlTemplatePathContent.contentString)
             document.outputSettings().syntax(Document.OutputSettings.Syntax.xml)
-            //document.body().select(".DOC_GENERATED_DATE").html(nodeService.getProperty(documentNodeRef, ContentModel.PROP_NAME) as String)
-            renderer.setDocumentFromString(document.html())
+            val modifiedHTML = htmlModifierService.modifyWithNodeProperties(document.html(), documentNodeRef)
+            renderer.setDocumentFromString(modifiedHTML)
             renderer.layout()
 
             val pdfFile = nodeService.createNode(

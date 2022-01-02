@@ -188,7 +188,7 @@
                 </property>
                 <property name="pt:historicIssues">
                     <title>Choroba</title>
-                    <type>d:boolean</type>
+                    <type>d:text</type>
                 </property>
                 <property name="pt:historicDiseaseDurationTo">
                     <title>Do kiedy</title>
