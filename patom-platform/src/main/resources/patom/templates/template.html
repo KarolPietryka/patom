@@ -60,7 +60,7 @@
     font-family: Arial, sans-serif;
     font-size: 14px;
     overflow: hidden;
-    padding: 0.4em 1em;
+    padding: 0.2em 0.3em;
     word-break: normal;
   }
     .tg td.tg-30{
@@ -141,36 +141,36 @@
                   </tr>
                  <tr>
                     <td class="tg-30" colspan="3">Imię</td>
-                    <td class="tg-20"colspan="2">${pt:farmOwnerSurname}</td>
+                    <td class="tg-20" colspan="2">${pt:farmOwnerSurname}</td>
                     <td class="tg-30" colspan="3">Poddano ubojowi</td>
-                    <td class="tg-20"colspan="2"></td>
+                    <td class="tg-20" colspan="2"></td>
                   </tr>
                   <tr>
                     <td class="tg-30" colspan="3">Kod pocztowy, Poczta</td>
-                    <td class="tg-20"colspan="2">${pt:farmZipCode}</td>
+                    <td class="tg-20" colspan="2">${pt:farmZipCode}</td>
                     <td class="tg-50" colspan="5">Wypełnia urząd lek. wet.</td>
                   </tr>
                   <tr>
                     <td class="tg-30" colspan="3">Miejscowość</td>
-                    <td class="tg-20"colspan="2">${pt:farmCity}</td>
+                    <td class="tg-20" colspan="2">${pt:farmCity}</td>
                     <td class="tg-50" colspan="5">Badania przedubojowe - data:</td>
                   </tr>
                   <tr>
-                    <td class="tg-30"colspan="3">ulica, nr domu</td>
-                    <td class="tg-20"colspan="2">${pt:farmStreet}</td>
-                    <td class="tg-30"colspan="3">Poz. Dz:</td>
-                    <td class="tg-20"colspan="2"></td>
+                    <td class="tg-30" colspan="3">ulica, nr domu</td>
+                    <td class="tg-20" colspan="2">${pt:farmStreet}</td>
+                    <td class="tg-30" colspan="3">Poz. Dz:</td>
+                    <td class="tg-20" colspan="2"></td>
                   </tr>
                   <tr>
-                    <td class="tg-30"colspan="3">Nr gospodarstwa **</td>
-                    <td class="tg-20"colspan="2">Kurnik nr: ${pt:farmId}</td>
+                    <td class="tg-30" colspan="3">Nr gospodarstwa **</td>
+                    <td class="tg-20" colspan="2">Kurnik nr: ${pt:farmId}</td>
                     <td class="tg-50" colspan="5">Badanie poubojowe - data:</td>
                   </tr>
                   <tr>
-                    <td class="tg-30"colspan="3">Nr NIP</td>
-                    <td class="tg-20"colspan="2">${pt:farmOwnerNIP}</td>
-                    <td class="tg-30"colspan="3">Poz. Dz:</td>
-                    <td class="tg-20"colspan="2"></td>
+                    <td class="tg-30" colspan="3">Nr NIP</td>
+                    <td class="tg-20" colspan="2">${pt:farmOwnerNIP}</td>
+                    <td class="tg-30" colspan="3">Poz. Dz:</td>
+                    <td class="tg-20" colspan="2"></td>
                   </tr>
                   <tr>
                     <td colspan="10">Adres, nazwa oraz numer weterynaryjny wylęgarni: ${pt:farmBreedingGroundAddress} ${pt:farmBreedingGroundName} ${pt:farmBreedingGroundId}</td>
@@ -179,22 +179,19 @@
                     <td class="tg-bold" colspan="10">Deklaracja właściciela</td>
                   </tr>
                   <tr>
-                    <td class="tg-30"colspan="3">Zwierzęta wywożone do rzeźni: </td>
+                    <td class="tg-30" colspan="3">Zwierzęta wywożone do rzeźni: </td>
                     <td class="tg-30" colspan="3">Gatunek kurcząt brojkery. Rasa: ${pt:herdRace}</td>
                     <td class="tg-20" colspan="2">Liczba zwierząt: ${pt:herdQuantity}</td>
                     <td class="tg-20" colspan="2">Data wstawiania: ${pt:herdData}</td>
                   </tr>
                   <tr>
-                    <td colspan="10">Czy zwierzęta były leczone:
-                      <input type="checkbox" ${pt:herdMedicals}>
-                      jeśli zaznaczono, to wypełnij poniżej:
-                    </td>
+                    <td colspan="10">Czy zwierzęta były leczone:<input type="checkbox" >jeśli zaznaczono, to wypełnij poniżej:</td>
                   </tr>
                   <tr>
                     <td rowspan="6" colspan="2" class="tg-20">Stosowane preparaty lecznicze dla których określono okresy karencji</td>
                     <td colspan="3" class="tg-30 tg-cent">Nazwa</td>
                     <td colspan="4" class="tg-40 tg-cent">Czas podawania</td>
-                    <td colspan="2" class="tg-20 tg-cent">Kuracja do</td>
+                    <td colspan="1">Kuracja do</td>
                   </tr>
                   <tr>
                     <td colspan="3" class="tg-30">${pt:herdMedicals$1}</td>
@@ -248,10 +245,7 @@
                   </tr>
                   <tr>
                     <td class="tg-50" colspan="5" rowspan="4">Czy gospodarstwo było objęte rygorem zwalczania chorób zakaźnych i/lub stwierdzano choroby mogące mieć wpływ na bezpieczeństwo żywności</td>
-                    <td class="tg-50" colspan="5">
-                      <input type="checkbox" ${pt:ifAnyMedicalIssues}>
-                      jeśli zaznaczono, to wypełnij poniżej:
-                    </td>
+                    <td class="tg-50" colspan="5"><input type="checkbox">jeśli zaznaczono, to wypełnij poniżej:</td>
                   </tr>
                   <tr>
                     <td class="tg-20" colspan="2">Gatunek zwierząt</td>
@@ -267,12 +261,12 @@
                   </tr>
                   <tr>
                     <td class="tg-50" colspan="5">Czy u zwierząt poddanych dotychczas ubojowi stwierdzono choroby</td>
-                    <td class="tg-20" colspan="2"><input type="checkbox" ${pt:ifAnyMedicalIssuesInButcheredHerds}></td>
+                    <td class="tg-20" colspan="2"><input type="checkbox"></td>
                     <td class="tg-30" colspan="3">Jeśli tak to jakie - ${historicDiseaseInButcheredHerds}</td>
                   </tr>
                   <tr>
                     <td class="tg-50" colspan="5">Czy w gospodarstwie zapewniono dobrstan zwierząt</td>
-                    <td class="tg-20" colspan="2" ${pt:ifHerdWellBeingProvided}><input type="checkbox" ${pt:ifHerdWellBeingProvided}></td>
+                    <td class="tg-20" colspan="2"><input type="checkbox" ></td>
                   </tr>
                   <tr>
                     <td rowspan="4">Żywienie zwierząt</td>
