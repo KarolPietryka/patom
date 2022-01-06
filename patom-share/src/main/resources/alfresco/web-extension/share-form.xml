@@ -21,6 +21,7 @@
                 <show id="pt:ifHerdWellBeingProvided"/>
                 <show id="pt:herdRace"/>
                 <show id="pt:herdQuantity"/>
+                <show id="pt:herdData"/>
                 <show id="pt:herdDeploymenDate"/>
                 <show id="pt:herdMedicals"/>
                 <show id="pt:herdMedicalsTreatmentDates"/>
@@ -132,6 +133,10 @@
                     </field>
                     <field id="pt:herdQuantity" set="herd_deployment">
                         <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="pt:herdData" set="herd_deployment">
+                        <control template="/org/alfresco/components/form/controls/date.ftl" />
+                        <control-param name="showTime">false</control-param>
                     </field>
                     <field id="pt:herdDeploymenDate" set="herd_deployment">
                         <control template="/org/alfresco/components/form/controls/date.ftl">

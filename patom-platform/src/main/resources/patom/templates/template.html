@@ -55,7 +55,7 @@
     word-break: normal;
   }
     .tg .row{
-        height:25px;
+        height:24px;
     }
     .tg td.tg-30{
       width: 30%;
@@ -174,7 +174,7 @@
                 <td class="tg-20" colspan="2"><div class=row>Data wstawiania: ${pt:herdData}</div></td>
             </tr>
             <tr>
-                <td colspan="10"><div class=row>Czy zwierzęta były leczone:</div><input type="checkbox" >jeśli zaznaczono, to wypełnij poniżej:</td>
+                <td colspan="10"><div class=row>Czy zwierzęta były leczone:</div><input type="checkbox" >jeśli zaznaczono, wypełnij poniżej:</td>
             </tr>
             <tr>
                 <td rowspan="6" colspan="2" class="tg-20"><div class=row>Stosowane preparaty lecznicze dla których określono okresy karencji</div></td>
@@ -251,36 +251,37 @@
             <tr>
                 <td class="tg-50" colspan="5"><div class=row>Czy u zwierząt poddanych dotychczas ubojowi stwierdzono choroby</div></td>
                 <td class="tg-20" colspan="2"><input type="checkbox"></td>
-                <td class="tg-30" colspan="3"><div class=row>Jeśli tak to jakie - ${historicDiseaseInButcheredHerds}</div></td>
+                <td class="tg-30" colspan="3"><div class=row>Jeśli tak to jakie - ${pt:historicDiseaseInButcheredHerds}</div></td>
             </tr>
             <tr>
                 <td class="tg-50" colspan="5"><div class=row>Czy w gospodarstwie zapewniono dobrstan zwierząt</div></td>
                 <td class="tg-20" colspan="2"><input type="checkbox" ></td>
+                <td class="tg-30" colspan="3"></td>
             </tr>
             <tr>
-                <td rowspan="4"><div class=row>Żywienie zwierząt</div></td>
+                <td rowspan="4"><div class=row>Zywienie zwierząt</div></td>
                 <td class="tg-90" colspan="9"><div class=row>Rodzaj paszy</div></td>
             </tr>
             <tr>
                 <td>od</td>
-                <td>${pt:starterFeedTimeFrom}</td>
+                <td class="tg-20" colspan="2">${pt:starterFeedTimeFrom}</td>
                 <td>do</td>
-                <td>${pt:starterFeedTimeTo}</td>
-                <td class="tg-50" colspan="5"><div class=row>Starter: ${pt:starterName}</div></td>
+                <td class="tg-20" colspan="2">${pt:starterFeedTimeTo}</td>
+                <td class="tg-30" colspan="3"><div class=row>Starter: ${pt:starterName}</div></td>
             </tr>
             <tr>
                 <td>od</td>
-                <td>${pt:growerFeedTimeFrom}</td>
+                <td class="tg-20" colspan="2">${pt:growerFeedTimeFrom}</td>
                 <td>do</td>
-                <td>${pt:growerFeedTimeTo}</td>
-                <td class="tg-50" colspan="5"><div class=row>Grower: ${pt:growerName}</div></td>
+                <td class="tg-20" colspan="2">${pt:growerFeedTimeTo}</td>
+                <td class="tg-30" colspan="3"><div class=row>Grower: ${pt:growerName}</div></td>
             </tr>
             <tr>
                 <td>od</td>
-                <td>${pt:finisherFeedTimeFrom}</td>
+                <td class="tg-20" colspan="2">${pt:finisherFeedTimeFrom}</td>
                 <td>do</td>
-                <td>${pt:finisherFeedTimeTo}</td>
-                <td class="tg-50" colspan="5"><div class=row>Finiszer: ${pt:finisherName}</div></td>
+                <td class="tg-20" colspan="2">${pt:finisherFeedTimeTo}</td>
+                <td class="tg-30" colspan="3"><div class=row>Finiszer: ${pt:finisherName}</div></td>
             </tr>
             <tr>
                 <td class="tg-50" colspan="5"><div class=row>Pochodzenie paszy otrzymanej przez zwierzęta</div></td>

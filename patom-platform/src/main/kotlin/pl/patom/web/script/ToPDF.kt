@@ -1,27 +1,16 @@
 package pl.patom.web.script
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties
-import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.pdf.PdfAction;
-import com.itextpdf.text.pdf.PdfReader;
-import com.itextpdf.text.pdf.PdfStamper;
-import com.itextpdf.text.pdf.PdfWriter;
 import mu.KotlinLogging
 import org.alfresco.model.ContentModel
 import org.alfresco.repo.nodelocator.NodeLocatorService
 import org.alfresco.service.cmr.model.FileFolderService
 import org.alfresco.service.cmr.repository.ContentService
-import org.alfresco.service.cmr.repository.ContentWriter
 import org.alfresco.service.cmr.repository.NodeRef
 import org.alfresco.service.cmr.repository.NodeService
-import org.json.JSONObject
-import org.json.simple.parser.JSONParser
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Date;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -31,14 +20,10 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.extensions.webscripts.AbstractWebScript
 import org.springframework.extensions.webscripts.WebScriptRequest
 import org.springframework.extensions.webscripts.WebScriptResponse
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component
 import org.xhtmlrenderer.pdf.ITextRenderer;
 import pl.patom.HTMLModifierService
-import pl.patom.context.html.modifier.HTMLModifierContext
 import pl.patom.model.rest.request.ToPDFRequest
-import java.io.OutputStream
 import pl.patom.model.TYPE_PATOM_DOCUMENT
 
 @Component("webscript.pl.patom.web.script.toPDF.post")
