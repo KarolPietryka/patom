@@ -5,16 +5,7 @@
   margin: 0;
   size: letter; /*or width x height 150mm 50mm*/
 }
-#front_page-header{
-  background-color:#5097c4;
-  height: 2.5em;
-}
 
-#front_page-header .letters{
-  color: white;
-  text-align: center;
-  font-size: xx-large;
-}
 
 #doc_introduction{
     font-weight: normal;
@@ -28,7 +19,7 @@
 }
 
 .table_introduction{
-  width: 100%;
+  width: 30em;
 }
   .table_introduction .table_info{
     font-weight: bold;
@@ -58,11 +49,14 @@
     border-style: solid;
     border-width: 0.3px;
     font-family: Arial, sans-serif;
-    font-size: 14px;
+    font-size: 3px;
     overflow: hidden;
     padding: 0.2em 0.3em;
     word-break: normal;
   }
+    .tg .row{
+        height:25px;
+    }
     .tg td.tg-30{
       width: 30%;
     }
@@ -70,7 +64,7 @@
       width: 20%;
     }
     .tg td.tg-40{
-      width: 40;
+      width: 40%;
     }
     .tg th.th-50{
       width: 50%;
@@ -110,211 +104,206 @@
         </style>
 </head>
 <body>
-    <div id="front_page">
-        <div id="front_page-header">
-            <div class="letters">
-                <p>Poultry processing industry</p>
+<div id="front_page">
+    <div id="doc_introduction">
+        <div class="table_introduction">
+            <div class="table_info">
+                <p>Informacje dotyczące łańcucha żywieniowego zwierząt do uboju</p>
+                <p>Firma: xxx Nr Kurnika:123</p>
             </div>
-        </div>
-        <div id="doc_introduction">
-            <div class="table_introduction">
-                <div class="table_info">
-                    <p>Informacje dotyczące łańcucha żywieniowego zwierząt do uboju</p>
-                    <p>Firma: xxx Nr Kurnika:123</p>
-                </div>
-            </div>
-        </div>
-        <div id="doc_main_content">
-             <table class="tg">
-                <thead>
-                  <tr>
-                    <th class="th-50" colspan="5">Wypełnia właściciel</th>
-                    <th class="th-50" colspan="5">Wypełnia rzeźnia</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="tg-30" colspan="3">Nazwisko</td>
-                    <td class="tg-20" colspan="2">${pt:farmOwnerFirstName}</td>
-                    <td class="tg-30" colspan="3">Dostarczono do uboju</td>
-                    <td class="tg-20" colspan="2"></td>
-                  </tr>
-                 <tr>
-                    <td class="tg-30" colspan="3">Imię</td>
-                    <td class="tg-20" colspan="2">${pt:farmOwnerSurname}</td>
-                    <td class="tg-30" colspan="3">Poddano ubojowi</td>
-                    <td class="tg-20" colspan="2"></td>
-                  </tr>
-                  <tr>
-                    <td class="tg-30" colspan="3">Kod pocztowy, Poczta</td>
-                    <td class="tg-20" colspan="2">${pt:farmZipCode}</td>
-                    <td class="tg-50" colspan="5">Wypełnia urząd lek. wet.</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-30" colspan="3">Miejscowość</td>
-                    <td class="tg-20" colspan="2">${pt:farmCity}</td>
-                    <td class="tg-50" colspan="5">Badania przedubojowe - data:</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-30" colspan="3">ulica, nr domu</td>
-                    <td class="tg-20" colspan="2">${pt:farmStreet}</td>
-                    <td class="tg-30" colspan="3">Poz. Dz:</td>
-                    <td class="tg-20" colspan="2"></td>
-                  </tr>
-                  <tr>
-                    <td class="tg-30" colspan="3">Nr gospodarstwa **</td>
-                    <td class="tg-20" colspan="2">Kurnik nr: ${pt:farmId}</td>
-                    <td class="tg-50" colspan="5">Badanie poubojowe - data:</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-30" colspan="3">Nr NIP</td>
-                    <td class="tg-20" colspan="2">${pt:farmOwnerNIP}</td>
-                    <td class="tg-30" colspan="3">Poz. Dz:</td>
-                    <td class="tg-20" colspan="2"></td>
-                  </tr>
-                  <tr>
-                    <td colspan="10">Adres, nazwa oraz numer weterynaryjny wylęgarni: ${pt:farmBreedingGroundAddress} ${pt:farmBreedingGroundName} ${pt:farmBreedingGroundId}</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-bold" colspan="10">Deklaracja właściciela</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-30" colspan="3">Zwierzęta wywożone do rzeźni: </td>
-                    <td class="tg-30" colspan="3">Gatunek kurcząt brojkery. Rasa: ${pt:herdRace}</td>
-                    <td class="tg-20" colspan="2">Liczba zwierząt: ${pt:herdQuantity}</td>
-                    <td class="tg-20" colspan="2">Data wstawiania: ${pt:herdData}</td>
-                  </tr>
-                  <tr>
-                    <td colspan="10">Czy zwierzęta były leczone:<input type="checkbox" >jeśli zaznaczono, to wypełnij poniżej:</td>
-                  </tr>
-                  <tr>
-                    <td rowspan="6" colspan="2" class="tg-20">Stosowane preparaty lecznicze dla których określono okresy karencji</td>
-                    <td colspan="3" class="tg-30 tg-cent">Nazwa</td>
-                    <td colspan="4" class="tg-40 tg-cent">Czas podawania</td>
-                    <td colspan="1">Kuracja do</td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="tg-30">${pt:herdMedicals$1}</td>
-                    <td class="tg-cent">od</td>
-                    <td>${pt:herdMedicalsApplyingDatesFrom$1}</td>
-                    <td class="tg-cent">do</td>
-                    <td>${pt:herdMedicalsApplyingDatesTo$1}</td>
-                    <td>${pt:herdMedicalsTreatmentDates$1}</td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="tg-30">${pt:herdMedicals$2}</td>
-                    <td class="tg-cent">od</td>
-                    <td>${pt:herdMedicalsApplyingDatesFrom$2}</td>
-                    <td class="tg-cent">do</td>
-                    <td>${pt:herdMedicalsApplyingDatesTo$2}</td>
-                    <td>${pt:herdMedicalsTreatmentDates$2}</td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="tg-30">${pt:herdMedicals$3}</td>
-                    <td class="tg-cent">od</td>
-                    <td>${pt:herdMedicalsApplyingDatesFrom$3}</td>
-                    <td class="tg-cent">do</td>
-                    <td>${pt:herdMedicalsApplyingDatesTo$3}</td>
-                    <td>${pt:herdMedicalsTreatmentDates$3}</td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="tg-30">${pt:herdMedicals$4}</td>
-                    <td class="tg-cent">od</td>
-                    <td>${pt:herdMedicalsApplyingDatesFrom$4}</td>
-                    <td class="tg-cent">do</td>
-                    <td>${pt:herdMedicalsApplyingDatesTo$4}</td>
-                    <td>${pt:herdMedicalsTreatmentDates$4}</td>
-                  </tr>
-                  <tr>
-                    <td colspan="3" class="tg-30">${pt:herdMedicals$5}</td>
-                    <td class="tg-cent">od</td>
-                    <td>${pt:herdMedicalsApplyingDatesFrom$5}</td>
-                    <td class="tg-cent">do</td>
-                    <td>${pt:herdMedicalsApplyingDatesTo$5}</td>
-                    <td>${pt:herdMedicalsTreatmentDates$5}</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-20" colspan="2" rowspan="2">Nazwisko lekarza sprawującego opiekę nad stadem</td>
-                    <td class="tg-30" colspan="3" rowspan="2">${pt:wetSurname}</td>
-                    <td class="tg-20 tg-no_bot_bor" colspan="2">Miejscowość</td>
-                    <td class="tg-30 tg-no_bot_bor" colspan="3">Nr telefonu lekarza</td>
-                  </tr>
-                  <tr class="tr-no_top_bor">
-                    <td class="tg-20 tg-no_top_bor" colspan="2">${pt:wetCity}</td>
-                    <td class="tg-30 tg-no_top_bor" colspan="3">${pt:wetPhoneNumber}</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-50" colspan="5" rowspan="4">Czy gospodarstwo było objęte rygorem zwalczania chorób zakaźnych i/lub stwierdzano choroby mogące mieć wpływ na bezpieczeństwo żywności</td>
-                    <td class="tg-50" colspan="5"><input type="checkbox">jeśli zaznaczono, to wypełnij poniżej:</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-20" colspan="2">Gatunek zwierząt</td>
-                    <td class="tg-30" colspan="3">${pt:treatRace}</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-20" colspan="2">Choroba</td>
-                    <td class="tg-30" colspan="3">${pt:historicIssues}</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-20" colspan="2">Do kiedy</td>
-                    <td class="tg-30" colspan="3">${pt:historicDiseaseDurationTo}</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-50" colspan="5">Czy u zwierząt poddanych dotychczas ubojowi stwierdzono choroby</td>
-                    <td class="tg-20" colspan="2"><input type="checkbox"></td>
-                    <td class="tg-30" colspan="3">Jeśli tak to jakie - ${historicDiseaseInButcheredHerds}</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-50" colspan="5">Czy w gospodarstwie zapewniono dobrstan zwierząt</td>
-                    <td class="tg-20" colspan="2"><input type="checkbox" ></td>
-                  </tr>
-                  <tr>
-                    <td rowspan="4">Żywienie zwierząt</td>
-                    <td class="tg-90" colspan="9">Rodzaj paszy</td>
-                  </tr>
-                  <tr>
-                    <td>od</td>
-                    <td>${pt:starterFeedTimeFrom}</td>
-                    <td>do</td>
-                    <td>${pt:starterFeedTimeTo}</td>
-                    <td class="tg-50" colspan="5">Starter: ${pt:starterName}</td>
-                  </tr>
-                  <tr>
-                    <td>od</td>
-                    <td>${pt:growerFeedTimeFrom}</td>
-                    <td>do</td>
-                    <td>${pt:growerFeedTimeTo}</td>
-                    <td class="tg-50" colspan="5">Grower: ${pt:growerName}</td>
-                  </tr>
-                  <tr>
-                    <td>od</td>
-                    <td>${pt:finisherFeedTimeFrom}</td>
-                    <td>do</td>
-                    <td>${pt:finisherFeedTimeTo}</td>
-                    <td class="tg-50" colspan="5">Finiszer: ${pt:finisherName}</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-50" colspan="5">Pochodzenie paszy otrzymanej przez zwierzęta</td>
-                    <td class="tg-50" colspan="5">${pt:foodSource}</td>
-                  </tr>
-                  <tr>
-                    <td>Dodatki paszowe - TODO</td>
-                    <td class="tg-40" colspan="4">Nazwa</td>
-                    <td class="tg-50" colspan="5">Pasza</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-30 tg-no_bot_bor" colspan="3">Miejscowość</td>
-                    <td class="tg-20 tg-no_bot_bor" colspan="2">Data</td>
-                    <td class="tg-50 tg-no-bot_bor" colspan="5">Czytelny podpis właściciela - zarządzającego</td>
-                  </tr>
-                  <tr class="tg-double_high">
-                    <td class="tg-30 tg-no_top_bor" rowspan="2" colspan="3">${pt:signCity}</td>
-                    <td class="tg-20 tg-no_top_bor" rowspan="2" colspan="2">${pt:signDate}</td>
-                    <td class="tg-50 tg-no_top_bor" rowspan="2" colspan="5"></td>
-                  </tr>
-                </tbody>
-            </table>
         </div>
     </div>
+    <div id="doc_main_content">
+        <table class="tg">
+            <thead>
+            <tr>
+                <th class="th-50" colspan="5">Wypełnia właściciel</th>
+                <th class="th-50" colspan="5">Wypełnia rzeźnia</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="tg-30" colspan="3"><div class=row>Nazwisko</div></td>
+                <td class="tg-20" colspan="2"><div class=row>${pt:farmOwnerFirstName}</div></td>
+                <td class="tg-30" colspan="3"><div class=row>Dostarczono do uboju</div></td>
+                <td class="tg-20" colspan="2"></td>
+            </tr>
+            <tr>
+                <td class="tg-30" colspan="3"><div class=row>Imię</div></td>
+                <td class="tg-20" colspan="2"><div class=row>${pt:farmOwnerSurname}</div></td>
+                <td class="tg-30" colspan="3"><div class=row>Poddano ubojowi</div></td>
+                <td class="tg-20" colspan="2"></td>
+            </tr>
+            <tr>
+                <td class="tg-30" colspan="3"><div class=row>Kod pocztowy, Poczta</div></td>
+                <td class="tg-20" colspan="2"><div class=row>${pt:farmZipCode}</div></td>
+                <td class="tg-50" colspan="5"><div class=row>Wypełnia urząd lek. wet.</div></td>
+            </tr>
+            <tr>
+                <td class="tg-30" colspan="3"><div class=row>Miejscowość</div></td>
+                <td class="tg-20" colspan="2"><div class=row>${pt:farmCity}</div></td>
+                <td class="tg-50" colspan="5"><div class=row>Badania przedubojowe - data:</div></td>
+            </tr>
+            <tr>
+                <td class="tg-30" colspan="3"><div class=row>ulica, nr domu</div></td>
+                <td class="tg-20" colspan="2"><div class=row>${pt:farmStreet}</div></td>
+                <td class="tg-30" colspan="3"><div class=row>Poz. Dz:</div></td>
+                <td class="tg-20" colspan="2"></td>
+            </tr>
+            <tr>
+                <td class="tg-30" colspan="3"><div class=row>Nr gospodarstwa **</div></td>
+                <td class="tg-20" colspan="2"><div class=row>Kurnik nr: ${pt:farmId}</div></td>
+                <td class="tg-50" colspan="5"><div class=row>Badanie poubojowe - data:</div></td>
+            </tr>
+            <tr>
+                <td class="tg-30" colspan="3"><div class=row>Nr NIP</div></td>
+                <td class="tg-20" colspan="2"><div class=row>${pt:farmOwnerNIP}</div></td>
+                <td class="tg-30" colspan="3"><div class=row>Poz. Dz:</div></td>
+                <td class="tg-20" colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="10"><div class=row>Adres, nazwa oraz numer weterynaryjny wylęgarni: ${pt:farmBreedingGroundAddress} ${pt:farmBreedingGroundName} ${pt:farmBreedingGroundId}</div></td>
+            </tr>
+            <tr>
+                <td class="tg-bold" colspan="10"><div class=row>Deklaracja właściciela</div></td>
+            </tr>
+            <tr>
+                <td class="tg-30" colspan="3"><div class=row>Zwierzęta wywożone do rzeźni: </div></td>
+                <td class="tg-30" colspan="3"><div class=row>Gatunek kurcząt brojkery. Rasa: ${pt:herdRace}</div></td>
+                <td class="tg-20" colspan="2"><div class=row>Liczba zwierząt: ${pt:herdQuantity}</div></td>
+                <td class="tg-20" colspan="2"><div class=row>Data wstawiania: ${pt:herdData}</div></td>
+            </tr>
+            <tr>
+                <td colspan="10"><div class=row>Czy zwierzęta były leczone:</div><input type="checkbox" >jeśli zaznaczono, to wypełnij poniżej:</td>
+            </tr>
+            <tr>
+                <td rowspan="6" colspan="2" class="tg-20"><div class=row>Stosowane preparaty lecznicze dla których określono okresy karencji</div></td>
+                <td colspan="3" class="tg-30 tg-cent"><div class=row>Nazwa</div></td>
+                <td colspan="4" class="tg-40 tg-cent"><div class=row>Czas podawania</div></td>
+                <td colspan="1"><div class=row>Kuracja do</div></td>
+            </tr>
+            <tr>
+                <td colspan="3" class="tg-30"><div class=row>${pt:herdMedicals$1}</div></td>
+                <td class="tg-cent"><div class=row>od</div></td>
+                <td>${pt:herdMedicalsApplyingDatesFrom$1}</td>
+                <td class="tg-cent"><div class=row>do</div></td>
+                <td>${pt:herdMedicalsApplyingDatesTo$1}</td>
+                <td>${pt:herdMedicalsTreatmentDates$1}</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="tg-30"><div class=row>${pt:herdMedicals$2}</div></td>
+                <td class="tg-cent"><div class=row>od</div></td>
+                <td>${pt:herdMedicalsApplyingDatesFrom$2}</td>
+                <td class="tg-cent"><div class=row>do</div></td>
+                <td>${pt:herdMedicalsApplyingDatesTo$2}</td>
+                <td>${pt:herdMedicalsTreatmentDates$2}</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="tg-30"><div class=row>${pt:herdMedicals$3}</div></td>
+                <td class="tg-cent"><div class=row>od</div></td>
+                <td>${pt:herdMedicalsApplyingDatesFrom$3}</td>
+                <td class="tg-cent"><div class=row>do</div></td>
+                <td>${pt:herdMedicalsApplyingDatesTo$3}</td>
+                <td>${pt:herdMedicalsTreatmentDates$3}</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="tg-30"><div class=row>${pt:herdMedicals$4}</div></td>
+                <td class="tg-cent"><div class=row>od</div></td>
+                <td>${pt:herdMedicalsApplyingDatesFrom$4}</td>
+                <td class="tg-cent"><div class=row>do</div></td>
+                <td>${pt:herdMedicalsApplyingDatesTo$4}</td>
+                <td>${pt:herdMedicalsTreatmentDates$4}</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="tg-30"><div class=row>${pt:herdMedicals$5}</div></td>
+                <td class="tg-cent"><div class=row>od</div></td>
+                <td>${pt:herdMedicalsApplyingDatesFrom$5}</td>
+                <td class="tg-cent"><div class=row>do</div></td>
+                <td>${pt:herdMedicalsApplyingDatesTo$5}</td>
+                <td>${pt:herdMedicalsTreatmentDates$5}</td>
+            </tr>
+            <tr>
+                <td class="tg-20" colspan="2" rowspan="2"><div class=row>Nazwisko lekarza sprawującego opiekę nad stadem</div></td>
+                <td class="tg-30" colspan="3" rowspan="2"><div class=row>${pt:wetSurname}</div></td>
+                <td class="tg-20 tg-no_bot_bor" colspan="2"><div class=row>Miejscowość</div></td>
+                <td class="tg-30 tg-no_bot_bor" colspan="3"><div class=row>Nr telefonu lekarza</div></td>
+            </tr>
+            <tr class="tr-no_top_bor">
+                <td class="tg-20 tg-no_top_bor" colspan="2"><div class=row>${pt:wetCity}</div></td>
+                <td class="tg-30 tg-no_top_bor" colspan="3"><div class=row>${pt:wetPhoneNumber}</div></td>
+            </tr>
+            <tr>
+                <td class="tg-50" colspan="5" rowspan="4"><div class=row>Czy gospodarstwo było objęte rygorem zwalczania chorób zakaźnych i/lub stwierdzano choroby mogące mieć wpływ na bezpieczeństwo żywności</div></td>
+                <td class="tg-50" colspan="5"><input type="checkbox">jeśli zaznaczono, to wypełnij poniżej:</td>
+            </tr>
+            <tr>
+                <td class="tg-20" colspan="2"><div class=row>Gatunek zwierząt</div></td>
+                <td class="tg-30" colspan="3"><div class=row>${pt:treatRace}</div></td>
+            </tr>
+            <tr>
+                <td class="tg-20" colspan="2"><div class=row>Choroba</div></td>
+                <td class="tg-30" colspan="3"><div class=row>${pt:historicIssues}</div></td>
+            </tr>
+            <tr>
+                <td class="tg-20" colspan="2"><div class=row>Do kiedy</div></td>
+                <td class="tg-30" colspan="3"><div class=row>${pt:historicDiseaseDurationTo}</div></td>
+            </tr>
+            <tr>
+                <td class="tg-50" colspan="5"><div class=row>Czy u zwierząt poddanych dotychczas ubojowi stwierdzono choroby</div></td>
+                <td class="tg-20" colspan="2"><input type="checkbox"></td>
+                <td class="tg-30" colspan="3"><div class=row>Jeśli tak to jakie - ${historicDiseaseInButcheredHerds}</div></td>
+            </tr>
+            <tr>
+                <td class="tg-50" colspan="5"><div class=row>Czy w gospodarstwie zapewniono dobrstan zwierząt</div></td>
+                <td class="tg-20" colspan="2"><input type="checkbox" ></td>
+            </tr>
+            <tr>
+                <td rowspan="4"><div class=row>Żywienie zwierząt</div></td>
+                <td class="tg-90" colspan="9"><div class=row>Rodzaj paszy</div></td>
+            </tr>
+            <tr>
+                <td>od</td>
+                <td>${pt:starterFeedTimeFrom}</td>
+                <td>do</td>
+                <td>${pt:starterFeedTimeTo}</td>
+                <td class="tg-50" colspan="5"><div class=row>Starter: ${pt:starterName}</div></td>
+            </tr>
+            <tr>
+                <td>od</td>
+                <td>${pt:growerFeedTimeFrom}</td>
+                <td>do</td>
+                <td>${pt:growerFeedTimeTo}</td>
+                <td class="tg-50" colspan="5"><div class=row>Grower: ${pt:growerName}</div></td>
+            </tr>
+            <tr>
+                <td>od</td>
+                <td>${pt:finisherFeedTimeFrom}</td>
+                <td>do</td>
+                <td>${pt:finisherFeedTimeTo}</td>
+                <td class="tg-50" colspan="5"><div class=row>Finiszer: ${pt:finisherName}</div></td>
+            </tr>
+            <tr>
+                <td class="tg-50" colspan="5"><div class=row>Pochodzenie paszy otrzymanej przez zwierzęta</div></td>
+                <td class="tg-50" colspan="5"><div class=row>${pt:foodSource}</div></td>
+            </tr>
+            <tr>
+                <td>Dodatki paszowe - TODO</td>
+                <td class="tg-40" colspan="4"><div class=row>Nazwa</div></td>
+                <td class="tg-50" colspan="5"><div class=row>Pasza</div></td>
+            </tr>
+            <tr>
+                <td class="tg-30 tg-no_bot_bor" colspan="3"><div class=row>Miejscowość</div></td>
+                <td class="tg-20 tg-no_bot_bor" colspan="2"><div class=row>Data</div></td>
+                <td class="tg-50 tg-no-bot_bor" colspan="5"><div class=row>Czytelny podpis właściciela - zarządzającego</div></td>
+            </tr>
+            <tr class="tg-double_high">
+                <td class="tg-30 tg-no_top_bor" rowspan="2" colspan="3"><div class=row>${pt:signCity}</div></td>
+                <td class="tg-20 tg-no_top_bor" rowspan="2" colspan="2"><div class=row>${pt:signDate}</div></td>
+                <td class="tg-50 tg-no_top_bor" rowspan="2" colspan="5"><div class="row"></div></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>
