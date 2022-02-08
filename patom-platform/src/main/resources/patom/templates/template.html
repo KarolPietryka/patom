@@ -49,7 +49,7 @@
     border-style: solid;
     border-width: 0.3px;
     font-family: Arial, sans-serif;
-    font-size: 3px;
+    /* font-size: 3px; */
     overflow: hidden;
     padding: 0.2em 0.3em;
     word-break: normal;
@@ -183,7 +183,7 @@
                 <td colspan="1"><div class=row>Kuracja do</div></td>
             </tr>
             <tr>
-                <td colspan="3" class="tg-30"><div class=row>${pt:herdMedicals$1}</div></td>
+                <td colspan="3" class="tg-30"><div class=row>${pt:herdMedicals}</div></td>
                 <td class="tg-cent"><div class=row>od</div></td>
                 <td>${pt:herdMedicalsApplyingDatesFrom$1}</td>
                 <td class="tg-cent"><div class=row>do</div></td>
@@ -288,9 +288,27 @@
                 <td class="tg-50" colspan="5"><div class=row>${pt:foodSource}</div></td>
             </tr>
             <tr>
-                <td>Dodatki paszowe - TODO</td>
+                <td rowspan="3">Dodatki paszowe</td>
                 <td class="tg-40" colspan="4"><div class=row>Nazwa</div></td>
                 <td class="tg-50" colspan="5"><div class=row>Pasza</div></td>
+            </tr>
+            <tr>
+                <td class="tg-40" colspan="4"><div class=row></div></td>
+                <td class="tg-50" colspan="5"><div class=row>starter</div></td>
+            </tr>
+            <tr>
+              <td class="tg-40" colspan="4"><div class=row></div></td>
+              <td class="tg-50" colspan="5"><div class=row>grower</div></td>
+            </tr>
+            <tr>
+              <td class="tg-50" colspan="5"><div class=row>Czy na terenie gospodarstwa pobierano próbki do badań monitoringowych pozostałości biologicznych i chemicznych</div></td>
+              <td colspan="1"><div class=row></div><input type="checkbox" ></td>
+              <td colspan="4"><div class=row></div>${pt:medicalSamplesBioOrChem}</td>
+            </tr>
+            <tr>
+                <td class="tg-50" colspan="5"><div class=row>Czy na terenie gospodarstwa stwierdzono wyniki dodatnie</div></td>
+                <td colspan="1"><div class=row></div><input type="checkbox" ></td>
+                <td colspan="4"><div class=row></div>${pt:ifBioChemResultsWerePositive}</td>
             </tr>
             <tr>
                 <td class="tg-30 tg-no_bot_bor" colspan="3"><div class=row>Miejscowość</div></td>

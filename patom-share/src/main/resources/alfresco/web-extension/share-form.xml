@@ -239,6 +239,16 @@
                             </control-param>
                         </control>
                     </field>
+                    <field id="pt:medicalSamplesBioOrChem" set="herd_feed">
+                        <control template="/org/alfresco/components/form/controls/selectone.ftl">
+                            <control-param name="options">
+                               Krew|Krew,Mocz|Mocz,Woda|Woda,Mleko|Mleko,Pasza|Pasza
+                            </control-param>
+                        </control>
+                    </field>
+                    <field id="pt:ifBioChemResultsWerePositive" set="herd_feed">
+                        <control template="/org/alfresco/components/form/controls/checkbox.ftl" />
+                    </field>
                 </appearance>
             </form>
         </forms>

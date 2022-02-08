@@ -246,6 +246,12 @@
                     <title>Pochodzenie paszy</title>
                     <type>d:text</type>
                 </property>
+                <property name="pt:medicalSamplesBioOrChem">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:ifBioChemResultsWerePositive">
+                    <type>d:boolean</type>
+                </property>
             </properties>
         </aspect>
     </aspects>
