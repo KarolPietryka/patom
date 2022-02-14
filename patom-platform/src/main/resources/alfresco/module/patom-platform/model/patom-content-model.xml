@@ -86,6 +86,14 @@
         </aspect>
         <aspect name="pt:farm">
             <properties>
+                <property name="pt:farmaName">
+                    <title>Nazwa fermy</title>
+                    <type>d:text</type>
+                </property>
+                <property name="pt:chickenHouseNumber">
+                    <title>Numer kurnika</title>
+                    <type>d:text</type>
+                </property>
                 <property name="pt:farmZipCode">
                     <title>Kod pocztowy, Poczta</title>
                     <type>d:text</type>

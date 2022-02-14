@@ -58,6 +58,12 @@
                             <control-param name="showTime">false</control-param>
                         </control>
                     </field>
+                    <field id="pt:chickenHouseNumber" set="introduction_fields">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+                    <field id="pt:farmName" set="introduction_fields">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
                     <field id="pt:farmOwnerFirstName" set="introduction_fields">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
