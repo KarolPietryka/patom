@@ -19,7 +19,6 @@
 }
 
 .table_introduction{
-  width: 30em;
 }
   .table_introduction .table_info{
     font-weight: bold;
@@ -80,7 +79,7 @@
     .tg tr.tg-double_high{
         height: 4em
     }
-    .tg th{
+    .tableHeader{
       border-color: black;
       border-style: solid;
       border-width: 0.3px;
@@ -90,6 +89,12 @@
       /* padding: 2em 9em; */
       word-break: normal;
     }
+    .docHeader{
+          font-family: Arial, sans-serif;
+          font-size: 16px;
+          overflow: hidden;
+          padding: 0em 1em 2em 1em;
+    }
         </style>
 </head>
 <body>
@@ -97,8 +102,14 @@
     <div id="doc_introduction">
         <div class="table_introduction">
             <div class="table_info">
-                <p>Informacje dotyczące łańcucha żywieniowego zwierząt do uboju</p>
-                <p>Ferma: ${pt:farmaName} Nr Kurnika: ${pt:chickenHouseNumber}</p>
+                <table class="tg">
+                    <thead>
+                        <tr>
+                            <th class="th-50 docHeader" colspan="5">Informacje dotyczące łańcucha żywieniowego zwierząt do uboju</th>
+                            <th class="th-50 docHeader" colspan="5">Ferma: ${pt:farmaName} Nr Kurnika: ${pt:chickenHouseNumber}</th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </div>
     </div>
@@ -106,23 +117,11 @@
         <table class="tg">
             <thead>
             <tr>
-                <th class="th-50" colspan="5">Wypełnia właściciel</th>
-                <th class="th-50" colspan="5">Wypełnia rzeźnia</th>
+                <th class="th-50 tableHeader" colspan="5">Wypełnia właściciel</th>
+                <th class="th-50 tableHeader" colspan="5">Wypełnia rzeźnia</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-            </tr>
             <tr>
                 <td colspan="3"><div class=row>Nazwisko</div></td>
                 <td colspan="2"><div class=row>${pt:farmOwnerFirstName}</div></td>
@@ -169,7 +168,7 @@
                 <td class="tg-bold" colspan="10"><div class=row>Deklaracja właściciela</div></td>
             </tr>
             <tr>
-                <td colspan="3"><div class=row>Zwierzęta wywożone do rzeźni: </div></td>
+                <td colspan="3"><div class="row tg-cent">Zwierzęta wywożone do rzeźni: </div></td>
                 <td colspan="3"><div class=row>Gatunek kurcząt brojkery. Rasa: ${pt:herdRace}</div></td>
                 <td colspan="2"><div class=row>Liczba zwierząt: ${pt:herdQuantity}</div></td>
                 <td colspan="2"><div class=row>Data wstawiania: ${pt:herdData}</div></td>
@@ -227,10 +226,10 @@
                 <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates$3}</td>
             </tr>
             <tr>
-                <td colspan="2" rowspan="2"><div class=row>Nazwisko lekarza sprawującego opiekę nad stadem</div></td>
+                <td colspan="2" rowspan="2"><div class="row tg-cent">Nazwisko lekarza sprawującego opiekę nad stadem</div></td>
                 <td colspan="3" rowspan="2"><div class=row>${pt:wetSurname}</div></td>
-                <td class="tg-20 tg-no_bot_bor" colspan="2"><div class=row>Miejscowość</div></td>
-                <td class="tg-30 tg-no_bot_bor" colspan="3"><div class=row>Nr telefonu lekarza</div></td>
+                <td class="tg-20 tg-no_bot_bor tg-cent" colspan="2"><div class=row>Miejscowość</div></td>
+                <td class="tg-30 tg-no_bot_bor tg-cent" colspan="3"><div class=row>Nr telefonu lekarza</div></td>
             </tr>
             <tr class="tr-no_top_bor">
                 <td class="tg-20 tg-no_top_bor" colspan="2"><div class=row>${pt:wetCity}</div></td>
@@ -264,7 +263,7 @@
             </tr>
             <tr>
                 <td rowspan="4"><div class=row>Zywienie zwierząt</div></td>
-                <td class="tg-90" colspan="9"><div class=row>Rodzaj paszy</div></td>
+                <td class="tg-90 tg-cent tg-bold" colspan="9"><div class="row">Rodzaj paszy</div></td>
             </tr>
             <tr>
                 <td>od</td>
@@ -293,16 +292,16 @@
             </tr>
             <tr>
                 <td rowspan="3">Dodatki paszowe</td>
-                <td colspan="4"><div class=row>Nazwa</div></td>
-                <td colspan="5"><div class=row>Pasza</div></td>
+                <td colspan="4"><div class="row tg-cent">Nazwa</div></td>
+                <td colspan="5"><div class="row tg-cent">Pasza</div></td>
             </tr>
             <tr>
                 <td colspan="4"><div class=row></div></td>
-                <td colspan="5"><div class=row>starter</div></td>
+                <td colspan="5"><div class=row>starter: ${pt:starterName}</div></td>
             </tr>
             <tr>
               <td colspan="4"><div class=row></div></td>
-              <td colspan="5"><div class=row>grower</div></td>
+              <td colspan="5"><div class=row>grower: ${pt:growerName}</div></td>
             </tr>
             <tr>
               <td colspan="5"><div class=row>Czy na terenie gospodarstwa pobierano próbki do badań monitoringowych pozostałości biologicznych i chemicznych</div></td>
