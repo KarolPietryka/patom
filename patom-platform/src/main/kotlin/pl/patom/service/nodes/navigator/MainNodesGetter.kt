@@ -1,4 +1,4 @@
-package pl.patom.service.file.locator
+package pl.patom.service.nodes.navigator
 
 import org.alfresco.model.ContentModel
 import org.alfresco.repo.nodelocator.NodeLocatorService
