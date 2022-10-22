@@ -4,6 +4,7 @@ ARG TOMCAT_DIR=/usr/local/tomcat
 
 USER root
 RUN yum install -y wget \
+        less \
         libreoffice \
         libXrender \
         libXtst && \
