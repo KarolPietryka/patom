@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="patom.initPatomMainSitePatch" class="pl.patom.patch.InitPatomMainSitePatch" parent="basePatch">
+        <property name="id" value="patch.initPatomMainSitePatch"/>
+        <property name="description" value="patch.initPatomMainSitePatch.description"/>
+        <property name="fixesFromSchema" value="0"/>
+        <property name="fixesToSchema" value="${version.schema}"/>
+        <property name="targetSchema" value="100000"/>
+    </bean>
+
+</beans>
