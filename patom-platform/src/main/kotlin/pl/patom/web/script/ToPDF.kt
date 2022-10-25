@@ -78,7 +78,7 @@ class ToPDF @Autowired constructor(
             mainNodesGetter.getHtmlTemplateDir(),
             ContentModel.ASSOC_CONTAINS,
             ContentModel.ASSOC_CONTAINS,
-            TYPE_PATOM_DOCUMENT
+            ContentModel.TYPE_CONTENT
         )
         val pdfFileContentWriter = contentService.getWriter(pdfNodeRef.childRef, ContentModel.PROP_CONTENT,true);
         pdfFileContentWriter.mimetype = MimetypeMap.MIMETYPE_PDF
