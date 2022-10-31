@@ -15,7 +15,6 @@ import org.springframework.extensions.webscripts.WebScriptRequest
 import org.springframework.extensions.webscripts.WebScriptResponse
 import org.springframework.stereotype.Component
 import pl.patom.model.rest.request.ToPDFRequest
-import pl.patom.model.TYPE_PATOM_DOCUMENT
 import pl.patom.model.properties.transform.ToPdfTransformationProperties
 import pl.patom.model.properties.transform.ToPdfTransformationProperties.Companion.PROP_TRANSFORMATION_COMMAND
 import pl.patom.service.file.content.ContentReadingService
@@ -75,7 +74,7 @@ class ToPDF @Autowired constructor(
 
     private fun createPdfNode(outputPdfFilePath: Path) {
         val pdfNodeRef = nodeService.createNode(
-            mainNodesGetter.getHtmlTemplateDir(),
+            mainNodesGetter.getPatomHtmlTemplateDir(),
             ContentModel.ASSOC_CONTAINS,
             ContentModel.ASSOC_CONTAINS,
             ContentModel.TYPE_CONTENT

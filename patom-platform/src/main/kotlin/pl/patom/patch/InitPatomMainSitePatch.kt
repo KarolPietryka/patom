@@ -3,14 +3,9 @@ package pl.patom.patch
 import org.alfresco.model.ContentModel
 import org.alfresco.repo.admin.patch.AbstractPatch
 import org.alfresco.repo.security.authentication.AuthenticationUtil
-import org.alfresco.service.cmr.action.ActionService
 import org.alfresco.service.cmr.model.FileFolderService
 import org.alfresco.service.cmr.repository.NodeRef
-import org.alfresco.service.cmr.rule.RuleService
-import org.alfresco.service.cmr.search.SearchService
-import org.alfresco.service.cmr.site.SiteService
 import org.alfresco.service.cmr.site.SiteVisibility
-import org.alfresco.service.namespace.NamespaceService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import pl.patom.service.nodes.navigator.MainNodesGetter
@@ -35,7 +30,7 @@ class InitPatomMainSitePatch @Autowired constructor(
     override fun applyInternal(): String {
         AuthenticationUtil.setFullyAuthenticatedUser(AuthenticationUtil.getAdminUserName())
         val patomSite = siteUtils.createSite(siteId, siteName, SiteVisibility.PUBLIC)
-        val siteDocumentLibrary: NodeRef = mainNodesGetter.getSiteDocumentLibrary(patomSite)
+        val siteDocumentLibrary: NodeRef = mainNodesGetter.getPatomSiteDocumentLibrary(patomSite)
         val patomSiteWorkspaceDir = createWorkspaceDir(siteDocumentLibrary)
         createHtmlTemplatesDir(patomSiteWorkspaceDir)
         createPdfFormsDir(patomSiteWorkspaceDir)
