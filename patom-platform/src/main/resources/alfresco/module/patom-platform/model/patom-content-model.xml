@@ -20,13 +20,6 @@
         <namespace uri="http://www.patom.pl/model/content/1.0" prefix="pt"/>
     </namespaces>
 
-<!--    <constraints>-->
-<!--    </constraints>-->
-
-    <!-- ===============================================================================================================
-        Constraints, Types, and Aspects go here...
-        -->
-
     <types>
         <type name="pt:document">
             <title>Patom document type</title>
