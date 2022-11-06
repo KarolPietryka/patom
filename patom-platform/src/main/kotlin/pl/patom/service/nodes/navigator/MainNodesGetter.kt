@@ -19,10 +19,9 @@ class MainNodesGetter @Autowired constructor(
     private val nodeLocatorService: NodeLocatorService,
     @Value("\${patom.site.template.html}") private val htmlTemplatesPaths: String,
     @Value("\${patom.mainTemplateName}") private val templateFileName: String,
+    @Value("\${patom.site.root.folder}") private val workspaceDir: String,
     private val fileFolderService: FileFolderService,
     private val customPathsService: CustomPathsService,
-    @Qualifier("NodeService") private val nodeService: NodeService,
-    @Value("\${patom.site.name}") private val siteName: String,
     @Value("\${patom.site.id}") private val siteId: String,
     private val siteUtils: SiteUtils,
     private val siteService: SiteService,
@@ -32,22 +31,25 @@ class MainNodesGetter @Autowired constructor(
     }
     fun getCompanyHome(): NodeRef =
         nodeLocatorService.getNode(companyhomeDirName, null, null)
+    fun getPatomSite() = siteUtils.getSite(siteId)
 
-    fun getPatomSite() = siteUtils.createSite(siteId, siteName, SiteVisibility.PUBLIC)
-
-    fun getPatomHtmlTemplateDir(): NodeRef =
+    fun getPatomWorkspaceDir(): NodeRef =
         fileFolderService.resolveNamePath(
             getPatomSiteDocumentLibrary(getPatomSite()),
+            pathToPathElementsList(workspaceDir)
+        ).nodeRef
+    fun getPatomHtmlTemplateDir(): NodeRef =
+        fileFolderService.resolveNamePath(
+            getPatomWorkspaceDir(),
             pathToPathElementsList(htmlTemplatesPaths)
         ).nodeRef
 
-    fun getPatomSiteDocumentLibrary(site: Site): NodeRef {
-        val patomSiteInfo = siteService.getSite(site.id)
-        return fileFolderService.resolveNamePath(
-            patomSiteInfo.nodeRef,
+    fun getPatomSiteDocumentLibrary(site: Site): NodeRef =
+        fileFolderService.resolveNamePath(
+            siteService.getSite(getPatomSite().id).nodeRef,
             pathToPathElementsList(SiteService.DOCUMENT_LIBRARY)
         ).nodeRef
-    }
+
     private fun pathToPathElementsList(path: String) =
         customPathsService.customPathToPathElementsList(path)
 

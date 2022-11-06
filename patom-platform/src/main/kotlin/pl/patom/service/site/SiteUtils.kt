@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service
 @Service
 class SiteUtils @Autowired constructor(
     private val sites: Sites,
-    private val siteService: SiteService
+    private val siteService: SiteService,
 ){
     fun createSite(
         siteShortName: String,
@@ -24,7 +24,10 @@ class SiteUtils @Autowired constructor(
         params: Params = getDefaultParams()
     ): Site {
         val site = getSiteDefinition(siteShortName, siteTitle, siteVisibility)
-        return sites.createSite(site, params)
+        return if(siteService.getSite(siteShortName) != null)
+            getSite(siteShortName)
+        else
+            sites.createSite(site, params)
     }
 
     private fun getSiteDefinition(siteId: String, siteTitle: String, siteVisibility: SiteVisibility): Site =

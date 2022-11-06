@@ -25,7 +25,7 @@ class InitPatomMainSitePatch @Autowired constructor(
     @Autowired
     private lateinit var mainNodesGetter: MainNodesGetter
     companion object{
-        const val PATH_APPLIED = "InitPatomMainSitePatch applied"
+        const val PATCH_NAME = "InitPatomMainSitePatch"
     }
     override fun applyInternal(): String {
         AuthenticationUtil.setFullyAuthenticatedUser(AuthenticationUtil.getAdminUserName())
@@ -34,7 +34,7 @@ class InitPatomMainSitePatch @Autowired constructor(
         val patomSiteWorkspaceDir = createWorkspaceDir(siteDocumentLibrary)
         createHtmlTemplatesDir(patomSiteWorkspaceDir)
         createPdfFormsDir(patomSiteWorkspaceDir)
-        return PATH_APPLIED
+        return "$PATCH_NAME $APPLIED"
     }
     private fun createWorkspaceDir(siteDocumentLibrary: NodeRef):NodeRef = fileFolderService.create(
         siteDocumentLibrary,
