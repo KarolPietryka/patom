@@ -1,4 +1,4 @@
-package pl.patom.model.properties.transform
+package pl.patom.service.properties.transform
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value

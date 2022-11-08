@@ -15,8 +15,8 @@ import org.springframework.extensions.webscripts.WebScriptRequest
 import org.springframework.extensions.webscripts.WebScriptResponse
 import org.springframework.stereotype.Component
 import pl.patom.model.rest.request.ToPDFRequest
-import pl.patom.model.properties.transform.ToPdfTransformationProperties
-import pl.patom.model.properties.transform.ToPdfTransformationProperties.Companion.PROP_TRANSFORMATION_COMMAND
+import pl.patom.service.properties.transform.ToPdfTransformationProperties
+import pl.patom.service.properties.transform.ToPdfTransformationProperties.Companion.PROP_TRANSFORMATION_COMMAND
 import pl.patom.service.file.content.ContentReadingService
 import pl.patom.service.nodes.navigator.MainNodesGetter
 import java.io.FileWriter
