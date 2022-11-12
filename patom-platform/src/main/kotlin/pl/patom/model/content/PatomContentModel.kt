@@ -11,4 +11,4 @@ const val PATOM_NAMESPACE_PREFIX = "pt"
 
 
 // TYPES
-val PATOM_TYPE_DOCUMENT = QName.createQName(PATOM_NAMESPACE_PREFIX_URI, "document")
+val TYPE_PATOM_DOCUMENT = QName.createQName(PATOM_NAMESPACE_PREFIX_URI, "document")

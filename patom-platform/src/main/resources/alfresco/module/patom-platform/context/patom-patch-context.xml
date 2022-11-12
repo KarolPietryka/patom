@@ -11,5 +11,13 @@
         <property name="fixesToSchema" value="${version.schema}"/>
         <property name="targetSchema" value="100000"/>
     </bean>
+    <bean id="patom.addHtmlFacadeToTemplateDirPatch"
+          class="pl.patom.patch.dir.html.template.AddHtmlFacadeToTemplateDirPatch" parent="basePatch">
+        <property name="id" value="patch.addHtmlFacadeToTemplateDirPatch"/>
+        <property name="description" value="patch.addHtmlFacadeToTemplateDirPatch.description"/>
+        <property name="fixesFromSchema" value="0"/>
+        <property name="fixesToSchema" value="${version.schema}"/>
+        <property name="targetSchema" value="100002"/>
+    </bean>
 
 </beans>
