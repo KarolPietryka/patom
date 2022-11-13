@@ -3,12 +3,14 @@ package pl.patom.service.nodes.creator
 import org.alfresco.model.ContentModel
 import org.alfresco.service.cmr.repository.NodeRef
 import org.alfresco.service.cmr.repository.NodeService
+import org.alfresco.service.namespace.QNamePattern
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Service
 import pl.patom.model.content.HTML_TEMPLATE_CHILD_ASSOC_QNAME
 import pl.patom.model.content.HTML_TEMPLATE_FACADE_CHILD_ASSOC_QNAME
 import pl.patom.model.content.TYPE_PATOM_DOCUMENT
+import pl.patom.model.template.facade.HtmlFacadeModel
 import pl.patom.service.nodes.navigator.MainNodesGetter
 import pl.patom.service.properties.site.PatomSiteProperties
 import pl.patom.service.resource.site.patom.PatomSiteResourceService
@@ -26,6 +28,13 @@ class HtmlFacadeNodeCreatorService @Autowired constructor(
         val htmlTemplateEmptyNode = createEmptyHtmlTemplateNode(pdfEmptyNode)
         patomSiteResourceService.putHtmlTemplateResourceContentToNode(htmlTemplateEmptyNode)
         patomSiteResourceService.putHtmlFacadeResourceContentToNode(pdfEmptyNode)
+    }
+    fun getHtmlFacadeModel(pdfNode: NodeRef): HtmlFacadeModel{
+        val htmlTemplate =
+            nodeService.getChildAssocs(pdfNode, ContentModel.ASSOC_CONTAINS, HTML_TEMPLATE_CHILD_ASSOC_QNAME )
+            .first()
+            .childRef
+        return HtmlFacadeModel(pdfNode, htmlTemplate)
     }
 
     private fun createEmptyHtmlFacadeNode() =

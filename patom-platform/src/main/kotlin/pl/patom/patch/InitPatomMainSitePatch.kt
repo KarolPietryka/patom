@@ -9,14 +9,14 @@ import org.alfresco.service.cmr.site.SiteVisibility
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import pl.patom.service.nodes.navigator.MainNodesGetter
+import pl.patom.service.properties.site.PatomSiteProperties
 import pl.patom.service.site.SiteUtils
 
 class InitPatomMainSitePatch @Autowired constructor(
     @Value("\${patom.site.name}") private val siteName: String,
     @Value("\${patom.site.id}") private val siteId: String,
     @Value("\${patom.site.root.folder}") private val workspaceDir: String,
-    @Value("\${patom.site.template.html}") private val htmlTemplatesDir: String,
-    @Value("\${patom.site.forms.pdf}") private val pdfFormsDir: String,
+    private val patomSiteProperties: PatomSiteProperties,
     ): AbstractPatch()  {
     @Autowired
     private lateinit var siteUtils: SiteUtils
@@ -42,10 +42,10 @@ class InitPatomMainSitePatch @Autowired constructor(
         ContentModel.TYPE_FOLDER).nodeRef
     private fun createHtmlTemplatesDir(siteWorkspaceDir: NodeRef) = fileFolderService.create(
         siteWorkspaceDir,
-        htmlTemplatesDir,
+        patomSiteProperties.htmlTemplatesDirectoryName,
         ContentModel.TYPE_FOLDER)
     private fun createPdfFormsDir(siteWorkspaceDir: NodeRef) = fileFolderService.create(
         siteWorkspaceDir,
-        pdfFormsDir,
+        patomSiteProperties.pdfFormsDirectoryName,
         ContentModel.TYPE_FOLDER)
 }
