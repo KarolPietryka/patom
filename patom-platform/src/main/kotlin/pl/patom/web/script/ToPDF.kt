@@ -44,19 +44,14 @@ class ToPDF @Autowired constructor(
         pdfTransformedDocumentCreatorService.createPdfForm(outputPdfFilePath)
     }
 
-    private fun getPdfEmptyFile() = TempFileProvider.getTempDir().toPath()
-        .resolve("${UUID.randomUUID()}.pdf")
-        .apply {
-            this.toFile()
-        }
-    private fun getHtmlTemplateFileWithContent(htmlTemplateNodeRef: NodeRef) = TempFileProvider.getTempDir().toPath()
-        .resolve("${UUID.randomUUID()}.html")
-        .apply {
-            putTemplateContentIntoFile(htmlTemplateNodeRef, this)
-        }
-    private fun putTemplateContentIntoFile(templateNodeRef: NodeRef, htmlFilePath: Path){
-        val htmlFileContent = contentReadingService.getFileContentAsString(templateNodeRef)
-        FileWriter(htmlFilePath.toFile()).write(htmlFileContent)
+    private fun getPdfEmptyFile() =
+        TempFileProvider.createTempFile(UUID.randomUUID().toString(), "pdf").toPath()
+    private fun getHtmlTemplateFileWithContent(htmlTemplateNodeRef: NodeRef): Path{
+        val htmlFileContent = contentReadingService.getFileContentInputStream(htmlTemplateNodeRef)
+        return TempFileProvider
+            .createTempFile(htmlFileContent, UUID.randomUUID().toString(), ".html")
+            .toPath()
+
     }
     private fun generateWkHtmlToPdfCommand(htmlFile: Path, pdfFile: Path) =
         mutableListOf(toPdfTransformationProperties.wkhtmltopdf)

@@ -15,4 +15,7 @@ class ContentReadingService @Autowired constructor(
 {
     fun getFileContentAsString(file: NodeRef) =
         contentService.getReader(file, ContentModel.PROP_CONTENT).contentString
+
+    fun getFileContentInputStream(file: NodeRef) =
+    contentService.getReader(file, ContentModel.PROP_CONTENT).contentInputStream
 }

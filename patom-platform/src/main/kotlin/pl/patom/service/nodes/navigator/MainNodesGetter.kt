@@ -12,12 +12,12 @@ import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import pl.patom.service.path.CustomPathsService
+import pl.patom.service.properties.site.PatomSiteProperties
 import pl.patom.service.site.SiteUtils
 
 @Service
 class MainNodesGetter @Autowired constructor(
     private val nodeLocatorService: NodeLocatorService,
-    @Value("\${patom.site.template.html}") private val htmlTemplatesPaths: String,
     @Value("\${patom.mainTemplateName}") private val templateFileName: String,
     @Value("\${patom.site.root.folder}") private val workspaceDir: String,
     private val fileFolderService: FileFolderService,
@@ -25,6 +25,7 @@ class MainNodesGetter @Autowired constructor(
     @Value("\${patom.site.id}") private val siteId: String,
     private val siteUtils: SiteUtils,
     private val siteService: SiteService,
+    private val patomSiteProperties: PatomSiteProperties
     ) {
     companion object{
         private val companyhomeDirName = "companyhome"
@@ -41,9 +42,15 @@ class MainNodesGetter @Autowired constructor(
     fun getPatomHtmlTemplateDir(): NodeRef =
         fileFolderService.resolveNamePath(
             getPatomWorkspaceDir(),
-            pathToPathElementsList(htmlTemplatesPaths)
+            pathToPathElementsList(patomSiteProperties.htmlTemplatesDirectoryName)
         ).nodeRef
 
+    fun getPatomPdfFormsDir(): NodeRef =
+        fileFolderService.resolveNamePath(
+            getPatomWorkspaceDir(),
+            pathToPathElementsList(patomSiteProperties.pdfFormsDirectoryName)
+        ).nodeRef
+    
     fun getPatomSiteDocumentLibrary(site: Site): NodeRef =
         fileFolderService.resolveNamePath(
             siteService.getSite(getPatomSite().id).nodeRef,

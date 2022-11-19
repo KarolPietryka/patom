@@ -5,22 +5,21 @@
             <auto-deploy>true</auto-deploy>
             <evaluator type="default.extensibility.evaluator" />
             <configurations>
-                <config evaluator="string-compare" condition="DocLibActions">
-                    <actions>
-                        <action id="to-PDF" type="javascript" label="action.label.doc-to-pdf" icon="document-inline-edit">
-							<param name="function">onToPDF</param>
-						</action>
-                    </actions>
-
-                    <actionGroups>
-                        <actionGroup id="document-details">
-                            <action index="301" id="to-PDF" />
-                        </actionGroup>
-						<actionGroup id="document-browse">
-							<action index="101" id="to-PDF" />
-						</actionGroup>
-                    </actionGroups>
-                </config>
+              <config evaluator="string-compare" condition="DocLibActions">
+                <actions>
+                  <action id="to-PDF" type="javascript" label="action.label.doc-to-pdf" icon="document-inline-edit">
+                    <param name="function">onToPDF</param>
+                  </action>
+                </actions>
+                <actionGroups>
+                  <actionGroup id="document-details">
+                    <action index="301" id="to-PDF" />
+                  </actionGroup>
+                  <actionGroup id="document-browse">
+                    <action index="101" id="to-PDF" />
+                  </actionGroup>
+                </actionGroups>
+              </config>
             </configurations>
         </module>
     </modules>
