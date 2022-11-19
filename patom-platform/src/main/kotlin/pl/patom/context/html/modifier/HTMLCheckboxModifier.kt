@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component
 import java.io.Serializable
 
 @Component("htmlCheckBoxModifier")
-class HTMLCheckBoxModifier: HTMLModifier {
+class HTMLCheckboxModifier: HTMLModifier {
     enum class CheckBoxState(val stringState: String){
         CHECKED("checked"),
         UNCHECKED("")
