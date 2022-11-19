@@ -9,12 +9,15 @@ import org.springframework.extensions.webscripts.WebScriptRequest
 import org.springframework.extensions.webscripts.WebScriptResponse
 import org.springframework.stereotype.Component
 import pl.patom.model.rest.request.ToPDFRequest
+import pl.patom.model.template.facade.HtmlFacadeModel
 import pl.patom.service.properties.transform.ToPdfTransformationProperties
 import pl.patom.service.properties.transform.ToPdfTransformationProperties.Companion.PROP_TRANSFORMATION_COMMAND
 import pl.patom.service.file.content.ContentReadingService
+import pl.patom.service.file.html.transformer.HtmlTransformService
 import pl.patom.service.nodes.creator.HtmlFacadeNodeCreatorService
 import pl.patom.service.nodes.creator.PdfTransformedDocumentCreatorService
 import java.io.FileWriter
+import java.io.InputStream
 import java.nio.file.Path
 import java.util.*
 
@@ -23,7 +26,8 @@ class ToPDF @Autowired constructor(
     private val contentReadingService: ContentReadingService,
     private val toPdfTransformationProperties: ToPdfTransformationProperties,
     private val htmlFacadeNodeCreatorService: HtmlFacadeNodeCreatorService,
-    private val pdfTransformedDocumentCreatorService: PdfTransformedDocumentCreatorService
+    private val pdfTransformedDocumentCreatorService: PdfTransformedDocumentCreatorService,
+    private val htmlTransformService: HtmlTransformService,
     ): AbstractWebScript() {
 
     companion object{
@@ -35,7 +39,7 @@ class ToPDF @Autowired constructor(
 
         val htmlFacade = htmlFacadeNodeCreatorService.getHtmlFacadeModel(htmlFacadeNodeRef)
         val outputPdfFilePath = getPdfEmptyFile()
-        val inputHtmlFilePath = getHtmlTemplateFileWithContent(htmlFacade.htmlTemplateNodeRef)
+        val inputHtmlFilePath = getHtmlTemplateFileWithContent(htmlFacade)
 
         val transformationCommand = generateWkHtmlToPdfCommand(inputHtmlFilePath, outputPdfFilePath)
         //Runs wkHtmlToPdf process with puts content into outputPdfFile
@@ -46,10 +50,12 @@ class ToPDF @Autowired constructor(
 
     private fun getPdfEmptyFile() =
         TempFileProvider.createTempFile(UUID.randomUUID().toString(), "pdf").toPath()
-    private fun getHtmlTemplateFileWithContent(htmlTemplateNodeRef: NodeRef): Path{
-        val htmlFileContent = contentReadingService.getFileContentInputStream(htmlTemplateNodeRef)
+    private fun getHtmlTemplateFileWithContent(htmlFacade: HtmlFacadeModel): Path{
+        val htmlFileContent = contentReadingService
+            .getFileContentAsString(htmlFacade.htmlTemplateNodeRef)
+            .let { htmlTransformService.modifyWithNodeProperties(it, htmlFacade.facadeNodeRef) }
         return TempFileProvider
-            .createTempFile(htmlFileContent, UUID.randomUUID().toString(), ".html")
+            .createTempFile(htmlFileContent.byteInputStream(), UUID.randomUUID().toString(), ".html")
             .toPath()
 
     }
