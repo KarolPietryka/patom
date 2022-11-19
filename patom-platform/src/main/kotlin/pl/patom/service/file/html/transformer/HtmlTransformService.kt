@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service
 import java.io.Serializable
 
 @Service
-class HTMLModifierService @Autowired constructor(
+class HtmlTransformService @Autowired constructor(
     @Qualifier("NodeService") private val nodeService: NodeService,
     private val namespaceService: NamespaceService
 ){
