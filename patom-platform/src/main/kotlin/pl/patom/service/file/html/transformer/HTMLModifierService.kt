@@ -1,4 +1,4 @@
-package pl.patom
+package pl.patom.service.file.html.transformer
 
 import org.alfresco.service.cmr.repository.NodeRef
 import org.alfresco.service.cmr.repository.NodeService
