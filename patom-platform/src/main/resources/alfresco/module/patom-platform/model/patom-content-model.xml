@@ -29,62 +29,22 @@
                     <title>Document Identification Number</title>
                     <type>d:text</type>
                 </property>
-                <property name="pt:signCity">
+
+                <property name="pt:farmName">
+                    <title>Nazwa fermy</title>
                     <type>d:text</type>
                 </property>
-                <property name="pt:signDate">
-                    <type>d:date</type>
+                <property name="pt:chickenHouseNumber">
+                    <title>Numer kurnika</title>
+                    <type>d:text</type>
                 </property>
-            </properties>
-            <mandatory-aspects>
-                <aspect>pt:farmOwner</aspect>
-                <aspect>pt:farm</aspect>
-                <aspect>pt:herd</aspect>
-                <aspect>pt:herdTreatment</aspect>
-                <aspect>pt:wet</aspect>
-                <aspect>pt:herdHistoricMedicalIssues</aspect>
-                <aspect>pt:foodSupply</aspect>
-            </mandatory-aspects>
-        </type>
-        <type name="pt:foodSupplyChainDocument">
-            <title>Dokument łańcucha żywieniowego zwierząt do uboju</title>
-            <parent>pt:document</parent>
-            <mandatory-aspects>
-                <aspect>pt:farmOwner</aspect>
-                <aspect>pt:farm</aspect>
-                <aspect>pt:herd</aspect>
-                <aspect>pt:herdTreatment</aspect>
-                <aspect>pt:wet</aspect>
-                <aspect>pt:herdHistoricMedicalIssues</aspect>
-                <aspect>pt:foodSupply</aspect>
-            </mandatory-aspects>
-        </type>
-    </types>
-    <aspects>
-        <aspect name="pt:farmOwner">
-            <properties>
+
                 <property name="pt:farmOwnerFirstName">
                     <title>Imie</title>
                     <type>d:text</type>
                 </property>
                 <property name="pt:farmOwnerSurname">
                     <title>Nazwisko</title>
-                    <type>d:text</type>
-                </property>
-                <property name="pt:farmOwnerNIP">
-                    <title>NIP</title>
-                    <type>d:int</type>
-                </property>
-            </properties>
-        </aspect>
-        <aspect name="pt:farm">
-            <properties>
-                <property name="pt:farmaName">
-                    <title>Nazwa fermy</title>
-                    <type>d:text</type>
-                </property>
-                <property name="pt:chickenHouseNumber">
-                    <title>Numer kurnika</title>
                     <type>d:text</type>
                 </property>
                 <property name="pt:farmZipCode">
@@ -103,6 +63,11 @@
                     <title>Numer gospodarstwa</title>
                     <type>d:text</type>
                 </property>
+                <property name="pt:farmOwnerNIP">
+                    <title>NIP</title>
+                    <type>d:int</type>
+                </property>
+
                 <property name="pt:farmBreedingGroundAddress">
                     <title>Adres wylęgarni</title>
                     <type>d:text</type>
@@ -115,54 +80,105 @@
                     <title>Numer weterynaryjny wylęgarni</title>
                     <type>d:text</type>
                 </property>
-                <property name="pt:ifHerdWellBeingProvided">
-                    <title>Czy zwierzętą zapewniono dobrostan</title>
-                    <type>d:boolean</type>
-                </property>
-            </properties>
-        </aspect>
-        <aspect name="pt:herd">
-            <properties>
+
                 <property name="pt:herdRace">
                     <title>Rasa kurcząt</title>
                     <type>d:text</type>
                 </property>
                 <property name="pt:herdQuantity">
-                    <title>Ilość kurcząt</title>
+                    <title>Liczba zwierząt</title>
                     <type>d:text</type>
                 </property>
                 <property name="pt:herdDeploymenDate">
                     <title>Data wstawienia</title>
                     <type>d:date</type>
                 </property>
-            </properties>
-        </aspect>
-        <aspect name="pt:herdTreatment">
-            <properties>
-                <property name="pt:herdMedicals">
-                    <title>Stosowane preparaty lecznicze</title>
+                
+                <property name="pt:ifAnimalsWereTreated">
+                    <type>d:boolean</type>
+                </property>
+
+                <property name="pt:herdMedicals_1">
+                    <title>Nazwa stosowanego preparetu (preparet 1)</title>
                     <type>d:text</type>
-                    <multiple>true</multiple>
                 </property>
-                <property name="pt:herdMedicalsTreatmentDates">
-                    <title>Kuracja do</title>
+                <property name="pt:herdMedicalsApplyingDatesFrom_1">
+                    <title>Czas podawania od (preparet 1)</title>
                     <type>d:datetime</type>
-                    <multiple>true</multiple>
                 </property>
-                <property name="pt:herdMedicalsApplyingDatesFrom">
-                    <title>Czas podawania od</title>
+                <property name="pt:herdMedicalsApplyingDatesTo_1">
+                    <title>Czas podawania do (preparet 1)</title>
                     <type>d:datetime</type>
-                    <multiple>true</multiple>
                 </property>
-                <property name="pt:herdMedicalsApplyingDatesTo">
-                    <title>Czas podawania do</title>
+                <property name="pt:herdMedicalsTreatmentDates_1">
+                    <title>Kuracja do (preparet 1)</title>
                     <type>d:datetime</type>
-                    <multiple>true</multiple>
                 </property>
-            </properties>
-        </aspect>
-        <aspect name="pt:wet">
-            <properties>
+                <property name="pt:herdMedicals_2">
+                    <title>Stosowane preparaty lecznicze (preparet 2)</title>
+                    <type>d:text</type>
+                </property>
+                <property name="pt:herdMedicalsApplyingDatesFrom_2">
+                    <title>Czas podawania od (preparet 2)</title>
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:herdMedicalsApplyingDatesTo_2">
+                    <title>Czas podawania do (preparet 2)</title>
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:herdMedicalsTreatmentDates_2">
+                    <title>Kuracja do (preparet 2)</title>
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:herdMedicals_3">
+                    <title>Stosowane preparaty lecznicze (preparet 3)</title>
+                    <type>d:text</type>
+                </property>
+                <property name="pt:herdMedicalsApplyingDatesFrom_3">
+                    <title>Czas podawania od (preparet 3)</title>
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:herdMedicalsApplyingDatesTo_3">
+                    <title>Czas podawania do (preparet 3)</title>
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:herdMedicalsTreatmentDates_3">
+                    <title>Kuracja do (preparet 3)</title>
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:herdMedicals_4">
+                    <title>Stosowane preparaty lecznicze (preparet 4)</title>
+                    <type>d:text</type>
+                </property>
+                <property name="pt:herdMedicalsApplyingDatesFrom_4">
+                    <title>Czas podawania od (preparet 4)</title>
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:herdMedicalsApplyingDatesTo_4">
+                    <title>Czas podawania do (preparet 4)</title>
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:herdMedicalsTreatmentDates_4">
+                    <title>Kuracja do (preparet 4)</title>
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:herdMedicals_5">
+                    <title>Stosowane preparaty lecznicze (preparet 5)</title>
+                    <type>d:text</type>
+                </property>
+                <property name="pt:herdMedicalsApplyingDatesFrom_5">
+                    <title>Czas podawania od (preparet 5)</title>
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:herdMedicalsApplyingDatesTo_5">
+                    <title>Czas podawania do (preparet 5)</title>
+                    <type>d:datetime</type>
+                </property>
+                <property name="pt:herdMedicalsTreatmentDates_5">
+                    <title>Kuracja do (preparet 5)</title>
+                    <type>d:datetime</type>
+                </property>
+
                 <property name="pt:wetSurname">
                     <title>Nazwisko weterynarza</title>
                     <type>d:text</type>
@@ -175,14 +191,17 @@
                     <title>Numer telefonu weterynarza</title>
                     <type>d:text</type>
                 </property>
-            </properties>
-        </aspect>
-        <aspect name="pt:herdHistoricMedicalIssues">
-            <properties>
+
                 <property name="pt:ifAnyMedicalIssues">
                     <title>Czy gospodarstwo było objęte rygorem zwalczania chorób zakaźnych i/lub stwierdzano choroby mogące mieć wpływ na bezpieczeństwo żywności</title>
                     <type>d:boolean</type>
                 </property>
+
+                <property name="pt:ifAnyMedicalIssues">
+                    <title>Czy gospodarstwo było objęte rygorem zwalczania chorób zakaźnych i/lub stwierdzano choroby mogące mieć wpływ na bezpieczeństwo żywności</title>
+                    <type>d:boolean</type>
+                </property>
+
                 <property name="pt:treatRace">
                     <title>Gatunek zwierząt</title>
                     <type>d:text</type>
@@ -203,10 +222,11 @@
                     <title>Stwierdzone choroby</title>
                     <type>d:text</type>
                 </property>
-            </properties>
-        </aspect>
-        <aspect name="pt:foodSupply">
-            <properties>
+                <property name="pt:ifHerdWellBeingProvided">
+                    <title>Czy w gospodarstwie zapewniono dobrstan zwierząt</title>
+                    <type>d:boolean</type>
+                </property>
+
                 <property name="pt:starterFeedTimeFrom">
                     <title>Starter podawano od</title>
                     <type>d:datetime</type>
@@ -214,6 +234,10 @@
                 <property name="pt:starterFeedTimeTo">
                     <title>Starter podawano do</title>
                     <type>d:datetime</type>
+                </property>
+                <property name="pt:starterType">
+                    <title>Rodzaj startera</title>
+                    <type>d:text</type>
                 </property>
                 <property name="pt:growerFeedTimeFrom">
                     <title>Grower podawano od</title>
@@ -223,6 +247,10 @@
                     <title>Grower podawano do</title>
                     <type>d:datetime</type>
                 </property>
+                <property name="pt:growerType">
+                    <title>Rodzaj growera</title>
+                    <type>d:text</type>
+                </property>
                 <property name="pt:finisherFeedTimeFrom">
                     <title>Finiszer podawanoa od</title>
                     <type>d:datetime</type>
@@ -231,33 +259,59 @@
                     <title>Finiszer podawanoa do</title>
                     <type>d:datetime</type>
                 </property>
-                <property name="pt:starterName">
-                    <title>Nazwa startera</title>
+                <property name="pt:finisherType">
+                    <title>Rodzaj finishera</title>
                     <type>d:text</type>
                 </property>
-                <property name="pt:growerName">
-                    <title>Nazwa growera</title>
-                    <type>d:text</type>
-                </property>
-                <property name="pt:finisherName">
-                    <title>Nazwa finishera</title>
-                    <type>d:text</type>
-                </property>
+
                 <property name="pt:foodSource">
                     <title>Pochodzenie paszy</title>
                     <type>d:text</type>
                 </property>
+
+                <property name="pt:foodExtras_1">
+                    <title>Dodatki paszowe 1</title>
+                    <type>d:text</type>
+                </property>
+                <property name="pt:starterName">
+                    <title>Nazwa startera</title>
+                    <type>d:text</type>
+                </property>
+                <property name="pt:foodExtras_2">
+                    <title>Dodatki paszowe 1</title>
+                    <type>d:text</type>
+                </property>
+                <property name="pt:growerName">
+                    <title>Nazwa startera</title>
+                    <type>d:text</type>
+                </property>
+
+                <property name="pt:ifSamplesWereTaken">
+                    <title>Czy na terenie gospodarstwa pobierano próbki do badań monitoringowych pozostałości biologicznych i chemicznych</title>
+                    <type>d:boolean</type>
+                </property>
                 <property name="pt:medicalSamplesBioOrChem">
                     <type>d:text</type>
                 </property>
-                <property name="pt:ifBioChemResultsWerePositive">
+
+                <property name="pt:ifSamplesWarePositive">
+                    <title>Czy na terenie gospodarstwa stwierdzono wyniki dodatnie</title>
                     <type>d:boolean</type>
                 </property>
-            </properties>
-        </aspect>
-    </aspects>
+                <property name="pt:ifBioChemResultsWerePositive">
+                    <title>Jeśli tak to kiedy</title>
+                    <type>d:date</type>
+                </property>
 
-<!--    <aspects>-->
-<!--    </aspects>-->
+
+                <property name="pt:signCity">
+                    <type>d:text</type>
+                </property>
+                <property name="pt:signDate">
+                    <type>d:date</type>
+                </property>
+            </properties>
+        </type>
+    </types>
 
 </model>

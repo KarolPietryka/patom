@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <style type='text/css'>
 * { font-family: courier; }
@@ -109,7 +109,7 @@
                     <thead>
                         <tr>
                             <th class="th-50 docHeader" colspan="5">Informacje dotyczące łańcucha żywieniowego zwierząt do uboju</th>
-                            <th class="th-50 docHeader" colspan="5">Ferma: ${pt:farmaName} Nr Kurnika: ${pt:chickenHouseNumber}</th>
+                            <th class="th-50 docHeader" colspan="5">Ferma: ${pt:farmName} Nr Kurnika: ${pt:chickenHouseNumber}</th>
                         </tr>
                     </thead>
                 </table>
@@ -174,26 +174,19 @@
                 <td colspan="3"><div class="row tg-cent">Zwierzęta wywożone do rzeźni: </div></td>
                 <td colspan="3"><div class=row>Gatunek kurcząt brojkery. Rasa: ${pt:herdRace}</div></td>
                 <td colspan="2"><div class=row>Liczba zwierząt: ${pt:herdQuantity}</div></td>
-                <td colspan="2"><div class=row>Data wstawiania: ${pt:herdData}</div></td>
+                <td colspan="2"><div class=row>Data wstawiania: ${pt:herdDeploymenDate}</div></td>
             </tr>
             <tr>
-                <td colspan="10"><div class=row>Czy zwierzęta były leczone:</div><input type="checkbox" >jeśli zaznaczono, wypełnij poniżej:</td>
+                <td colspan="10">
+                    <div class=row>Czy zwierzęta były leczone:
+                        <input type="checkbox">{pt:ifAnimalsWereTreated} jeśli zaznaczono, wypełnij poniżej:
+                    </div>
+                </td>
             </tr>
             <tr>
                 <td rowspan="6" colspan="1" class="tg-cent"><div class="row wrap">Stosowane preparaty lecznicze dla których określono okresy karencji</div></td>
                 <td colspan="4" class="tg-40 tg-cent"><div class=row>Nazwa</div></td>
                 <td colspan="4" class="tg-40 tg-cent"><div class=row>Czas podawania</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-            </tr>
-            <tr>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
-                <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
                 <td colspan="1" class="tg-cent"><div class=row>Kuracja do</div></td>
             </tr>
             <tr>
@@ -221,12 +214,20 @@
                 <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates$3}</td>
             </tr>
             <tr>
-                <td colspan="4" class="tg-40"><div class=row>${pt:herdMedicals$3}</div></td>
+                <td colspan="4" class="tg-40"><div class=row>${pt:herdMedicals$4}</div></td>
                 <td colspan="1" class="tg-cent"><div class=row>od</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom$3}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom$4}</td>
                 <td colspan="1" class="tg-cent"><div class=row>do</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo$3}</td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates$3}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo$4}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates$4}</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="tg-40"><div class=row>${pt:herdMedicals$5}</div></td>
+                <td colspan="1" class="tg-cent"><div class=row>od</div></td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom$5}</td>
+                <td colspan="1" class="tg-cent"><div class=row>do</div></td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo$5}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates$5}</td>
             </tr>
             <tr>
                 <td colspan="2" rowspan="2"><div class="row tg-cent">Nazwisko lekarza sprawującego opiekę nad stadem</div></td>
@@ -240,7 +241,7 @@
             </tr>
             <tr>
                 <td colspan="5" rowspan="4"><div class=row>Czy gospodarstwo było objęte rygorem zwalczania chorób zakaźnych i/lub stwierdzano choroby mogące mieć wpływ na bezpieczeństwo żywności</div></td>
-                <td colspan="5"><input type="checkbox">jeśli zaznaczono, to wypełnij poniżej:</td>
+                <td colspan="5"><input type="checkbox">${pt:ifAnyMedicalIssues} jeśli zaznaczono, to wypełnij poniżej:</td>
             </tr>
             <tr>
                 <td colspan="2"><div class=row>Gatunek zwierząt</div></td>
@@ -256,38 +257,32 @@
             </tr>
             <tr>
                 <td colspan="5"><div class=row>Czy u zwierząt poddanych dotychczas ubojowi stwierdzono choroby</div></td>
-                <td colspan="2"><input type="checkbox"></td>
+                <td colspan="2"><input type="checkbox">{pt:ifAnyMedicalIssuesInButcheredHerds}</td>
                 <td colspan="3"><div class=row>Jeśli tak to jakie - ${pt:historicDiseaseInButcheredHerds}</div></td>
             </tr>
             <tr>
                 <td colspan="5"><div class=row>Czy w gospodarstwie zapewniono dobrstan zwierząt</div></td>
-                <td colspan="2"><input type="checkbox" ></td>
+                <td colspan="2"><input type="checkbox">${pt:ifHerdWellBeingProvided}</td>
                 <td colspan="3"></td>
             </tr>
             <tr>
-                <td rowspan="4"><div class=row>Zywienie zwierząt</div></td>
+                <td rowspan="4"><div class=row>Żywienie zwierząt</div></td>
                 <td class="tg-90 tg-cent tg-bold" colspan="9"><div class="row">Rodzaj paszy</div></td>
             </tr>
             <tr>
-                <td>od</td>
-                <td colspan="2">${pt:starterFeedTimeFrom}</td>
-                <td>do</td>
-                <td colspan="2">${pt:starterFeedTimeTo}</td>
-                <td colspan="3"><div class=row>Starter: ${pt:starterName}</div></td>
+                <td colspan="2"><div class=row>od ${pt:starterFeedTimeFrom}</div></td>
+                <td colspan="2"><div class=row>do ${pt:starterFeedTimeTo}</div></td>
+                <td colspan="6"><div class=row>Starter: ${pt:starterType}</div></td>
             </tr>
             <tr>
-                <td>od</td>
-                <td colspan="2">${pt:growerFeedTimeFrom}</td>
-                <td>do</td>
-                <td colspan="2">${pt:growerFeedTimeTo}</td>
-                <td colspan="3"><div class=row>Grower: ${pt:growerName}</div></td>
+                <td colspan="2"><div class=row>od ${pt:growerFeedTimeFrom}</div></td>
+                <td colspan="2"><div class=row>do ${pt:growerFeedTimeTo}</div></td>
+                <td colspan="6"><div class=row>Grower: ${pt:growerType}</div></td>
             </tr>
             <tr>
-                <td>od</td>
-                <td colspan="2">${pt:finisherFeedTimeFrom}</td>
-                <td>do</td>
-                <td colspan="2">${pt:finisherFeedTimeTo}</td>
-                <td colspan="3"><div class=row>Finiszer: ${pt:finisherName}</div></td>
+                <td colspan="2"><div class=row>od ${pt:finisherFeedTimeFrom}</div></td>
+                <td colspan="2"><div class=row>do ${pt:finisherFeedTimeTo}</div></td>
+                <td colspan="6"><div class=row>Finiszer: ${pt:finisherType}</div></td>
             </tr>
             <tr>
                 <td colspan="5"><div class=row>Pochodzenie paszy otrzymanej przez zwierzęta</div></td>
@@ -299,27 +294,27 @@
                 <td colspan="5"><div class="row tg-cent">Pasza</div></td>
             </tr>
             <tr>
-                <td colspan="4"><div class=row></div></td>
+                <td colspan="4"><div class=row>${pt:foodExtras_1}</div></td>
                 <td colspan="5"><div class=row>starter: ${pt:starterName}</div></td>
             </tr>
             <tr>
-              <td colspan="4"><div class=row></div></td>
+              <td colspan="4"><div class=row>${pt:foodExtras_2}</div></td>
               <td colspan="5"><div class=row>grower: ${pt:growerName}</div></td>
             </tr>
             <tr>
               <td colspan="5"><div class=row>Czy na terenie gospodarstwa pobierano próbki do badań monitoringowych pozostałości biologicznych i chemicznych</div></td>
-              <td colspan="1"><div class=row></div><input type="checkbox" ></td>
+              <td colspan="1"><div class=row></div><input type="checkbox">${pt:ifSamplesWereTaken}</td>
               <td colspan="4"><div class=row></div>${pt:medicalSamplesBioOrChem}</td>
             </tr>
             <tr>
                 <td colspan="5"><div class=row>Czy na terenie gospodarstwa stwierdzono wyniki dodatnie</div></td>
-                <td colspan="1"><div class=row></div><input type="checkbox" ></td>
+                <td colspan="1"><div class=row></div><input type="checkbox">${pt:ifSamplesWarePositive}</td>
                 <td colspan="4"><div class=row></div>${pt:ifBioChemResultsWerePositive}</td>
             </tr>
             <tr>
                 <td class="tg-30 tg-no_bot_bor" colspan="3"><div class=row>Miejscowość</div></td>
                 <td class="tg-20 tg-no_bot_bor" colspan="2"><div class=row>Data</div></td>
-                <td class="tg-50 tg-no-bot_bor" colspan="5"><div class=row>Czytelny podpis właściciela - zarządzającego</div></td>
+                <td class="tg-50 tg-no_bot_bor" colspan="5"><div class=row>Czytelny podpis właściciela - zarządzającego</div></td>
             </tr>
             <tr class="tg-double_high">
                 <td class="tg-30 tg-no_top_bor" rowspan="2" colspan="3"><div class=row>${pt:signCity}</div></td>
