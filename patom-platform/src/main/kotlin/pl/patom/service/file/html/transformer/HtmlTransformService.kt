@@ -10,12 +10,15 @@ import org.springframework.stereotype.Service
 import pl.patom.model.content.PATOM_NAMESPACE_PREFIX
 import pl.patom.model.properties.HTML_PROPERTY_PREFIX
 import pl.patom.model.properties.HTML_PROPERTY_SUFFIX
+import pl.patom.service.file.html.transformer.strategy.context.HtmlTransformStrategyContext
 import java.io.Serializable
 
 @Service
 class HtmlTransformService @Autowired constructor(
     @Qualifier("NodeService") private val nodeService: NodeService,
-    private val namespaceService: NamespaceService
+    private val namespaceService: NamespaceService,
+    @Qualifier("htmlTransformStrategyContext")
+    private val htmlTransformStrategyContext: HtmlTransformStrategyContext
 ){
     fun modifyWithNodeProperties(htmlText: String, nodeRef: NodeRef): String{
         //var parsedHTMLText = htmlText.replace("font-size: 3px", "font-size: 10px")
@@ -23,13 +26,14 @@ class HtmlTransformService @Autowired constructor(
         nodeService.getProperties(nodeRef)
             .filter (this::filterPatomProperties)
             .mapKeys (this::parsePropNameToHtmlForm)
-            .forEach { (propName, propValue) ->
-                //parsedHTMLText.replace(Regex.fromLiteral(propName), propValue)
+            .map { Pair(it.key, it.value) }
+            .forEach { it ->
+                when(it.second){
+                    (it.second is Boolean) -> htmlTransformStrategyContext.checkboxModifier.modify(it, parsedHTMLText.toString())
+                    (it.second is String) -> htmlTransformStrategyContext.textModifier.modify(it, parsedHTMLText.toString())
+                }
         }
         return parsedHTMLText.toString()
-    }
-    private fun doReplace(replacePair:Pair<String, Serializable>, htmlText: String): String{
-        return htmlText.replace(replacePair.first, replacePair.second.toString())
     }
     private fun filterPatomProperties(prop: Map.Entry<QName, Serializable>) =
         namespaceService.getPrefixes(prop.key.namespaceURI).any { it == PATOM_NAMESPACE_PREFIX }
