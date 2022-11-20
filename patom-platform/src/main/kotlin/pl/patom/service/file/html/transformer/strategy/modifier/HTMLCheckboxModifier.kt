@@ -1,4 +1,4 @@
-package pl.patom.context.html.modifier
+package pl.patom.service.file.html.transformer.strategy.modifier
 
 import org.springframework.stereotype.Component
 import java.io.Serializable

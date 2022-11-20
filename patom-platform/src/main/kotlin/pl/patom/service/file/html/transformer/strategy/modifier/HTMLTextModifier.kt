@@ -1,11 +1,11 @@
-package pl.patom.context.html.modifier
+package pl.patom.service.file.html.transformer.strategy.modifier
 
 import mu.KotlinLogging
 import org.springframework.stereotype.Component
 import java.io.Serializable
 
 @Component("htmlTextModifier")
-class HTMLTextModifier: HTMLModifier{
+class HTMLTextModifier: HTMLModifier {
     companion object{
         private val LOG = KotlinLogging.logger {  }
     }
