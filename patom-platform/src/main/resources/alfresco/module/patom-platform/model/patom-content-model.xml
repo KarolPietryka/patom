@@ -197,11 +197,6 @@
                     <type>d:boolean</type>
                 </property>
 
-                <property name="pt:ifAnyMedicalIssues">
-                    <title>Czy gospodarstwo było objęte rygorem zwalczania chorób zakaźnych i/lub stwierdzano choroby mogące mieć wpływ na bezpieczeństwo żywności</title>
-                    <type>d:boolean</type>
-                </property>
-
                 <property name="pt:treatRace">
                     <title>Gatunek zwierząt</title>
                     <type>d:text</type>
@@ -291,6 +286,7 @@
                     <type>d:boolean</type>
                 </property>
                 <property name="pt:medicalSamplesBioOrChem">
+                    <title>Typ próbek do badań monitoringowych</title>
                     <type>d:text</type>
                 </property>
 
