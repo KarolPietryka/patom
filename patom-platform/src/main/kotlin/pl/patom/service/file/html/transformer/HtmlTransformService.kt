@@ -12,6 +12,7 @@ import pl.patom.model.properties.HTML_PROPERTY_PREFIX
 import pl.patom.model.properties.HTML_PROPERTY_SUFFIX
 import pl.patom.service.file.html.transformer.strategy.context.HtmlTransformStrategyContext
 import java.io.Serializable
+import java.util.zip.DataFormatException
 
 @Service
 class HtmlTransformService @Autowired constructor(
@@ -22,18 +23,22 @@ class HtmlTransformService @Autowired constructor(
 ){
     fun modifyWithNodeProperties(htmlText: String, nodeRef: NodeRef): String{
         //var parsedHTMLText = htmlText.replace("font-size: 3px", "font-size: 10px")
-        val parsedHTMLText = StringBuilder(htmlText)
+        var parsedHtmlText = htmlText
         nodeService.getProperties(nodeRef)
             .filter (this::filterPatomProperties)
             .mapKeys (this::parsePropNameToHtmlForm)
             .map { Pair(it.key, it.value) }
-            .forEach { it ->
-                when(it.second){
-                    (it.second is Boolean) -> htmlTransformStrategyContext.checkboxModifier.modify(it, parsedHTMLText.toString())
-                    (it.second is String) -> htmlTransformStrategyContext.textModifier.modify(it, parsedHTMLText.toString())
+            .forEach {
+                parsedHtmlText = when(it.second){
+                    (it.second is Boolean) ->
+                        htmlTransformStrategyContext.checkboxModifier.modify(it, parsedHtmlText)
+                    (it.second is String) ->
+                        htmlTransformStrategyContext.textModifier.modify(it, parsedHtmlText)
+                    else -> throw DataFormatException("Property ${it.first} has unknown type ${it.second::class.simpleName}" +
+                            " in terms of HTML transformation")
                 }
         }
-        return parsedHTMLText.toString()
+        return parsedHtmlText
     }
     private fun filterPatomProperties(prop: Map.Entry<QName, Serializable>) =
         namespaceService.getPrefixes(prop.key.namespaceURI).any { it == PATOM_NAMESPACE_PREFIX }
