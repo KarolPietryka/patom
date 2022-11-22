@@ -5,45 +5,93 @@
         <forms>
             <form>
                 <field-visibility>
-                <show id="pt:signDate"/>
-                <show id="pt:farmOwnerFirstName"/>
-                <show id="pt:farmOwnerSurname"/>
-                <show id="pt:farmOwnerNIP"/>
-                <show id="pt:farmZipCode"/>
-                <show id="pt:farmCity"/>
-                <show id="pt:farmStreet"/>
-                <show id="pt:farmId"/>
-                <show id="pt:farmBreedingGroundAddress"/>
-                <show id="pt:farmBreedingGroundName"/>
-                <show id="pt:farmBreedingGroundId"/>
-                <show id="pt:ifHerdWellBeingProvided"/>
-                <show id="pt:herdRace"/>
-                <show id="pt:herdQuantity"/>
-                <show id="pt:herdData"/>
-                <show id="pt:herdDeploymenDate"/>
-                <show id="pt:herdMedicals"/>
-                <show id="pt:herdMedicalsTreatmentDates"/>
-                <show id="pt:herdMedicalsApplyingDatesFrom"/>
-                <show id="pt:herdMedicalsApplyingDatesTo"/>
-                <show id="pt:wetSurname"/>
-                <show id="pt:wetCity"/>
-                <show id="pt:wetPhoneNumber"/>
-                <show id="pt:ifAnyMedicalIssues"/>
-                <show id="pt:treatRace"/>
-                <show id="pt:historicIssues"/>
-                <show id="pt:historicDiseaseDurationTo"/>
-                <show id="pt:ifAnyMedicalIssuesInButcheredHerds"/>
-                <show id="pt:historicDiseaseInButcheredHerds"/>
-                <show id="pt:starterFeedTimeFrom"/>
-                <show id="pt:starterFeedTimeTo"/>
-                <show id="pt:growerFeedTimeFrom"/>
-                <show id="pt:growerFeedTimeTo"/>
-                <show id="pt:finisherFeedTimeFrom"/>
-                <show id="pt:finisherFeedTimeTo"/>
-                <show id="pt:starterName"/>
-                <show id="pt:growerName"/>
-                <show id="pt:finisherName"/>
-                <show id="pt:foodSource"/>
+                    <show id="pt:signDate"/>
+                    <show id="pt:signCity"/>
+                    <show id="pt:farmName"/>
+                    <show id="pt:chickenHouseNumber"/>
+                    <show id="pt:farmOwnerFirstName"/>
+                    <show id="pt:farmOwnerSurname"/>
+                    <show id="pt:farmZipCode"/>
+                    <show id="pt:farmCity"/>
+                    <show id="pt:farmStreet"/>
+                    <show id="pt:farmId"/>
+                    <show id="pt:farmOwnerNIP"/>
+
+                    <show id="pt:farmBreedingGroundAddress"/>
+                    <show id="pt:farmBreedingGroundName"/>
+                    <show id="pt:farmBreedingGroundId"/>
+
+                    <show id="pt:herdRace"/>
+                    <show id="pt:herdQuantity"/>
+                    <show id="pt:herdData"/>
+                    <show id="pt:herdDeploymenDate"/>
+
+                    <show id="pt:herdMedicals_1"/>
+                    <show id="pt:herdMedicalsApplyingDatesFrom_1"/>
+                    <show id="pt:herdMedicalsApplyingDatesTo_1"/>
+                    <show id="pt:herdMedicalsTreatmentDates_1"/>
+
+                    <show id="pt:herdMedicals_1"/>
+                    <show id="pt:herdMedicalsApplyingDatesFrom_1"/>
+                    <show id="pt:herdMedicalsApplyingDatesTo_1"/>
+                    <show id="pt:herdMedicalsTreatmentDates_1"/>
+
+                    <show id="pt:herdMedicals_2"/>
+                    <show id="pt:herdMedicalsApplyingDatesFrom_2"/>
+                    <show id="pt:herdMedicalsApplyingDatesTo_2"/>
+                    <show id="pt:herdMedicalsTreatmentDates_2"/>
+
+                    <show id="pt:herdMedicals_3"/>
+                    <show id="pt:herdMedicalsApplyingDatesFrom_3"/>
+                    <show id="pt:herdMedicalsApplyingDatesTo_3"/>
+                    <show id="pt:herdMedicalsTreatmentDates_3"/>
+
+                    <show id="pt:herdMedicals_4"/>
+                    <show id="pt:herdMedicalsApplyingDatesFrom_4"/>
+                    <show id="pt:herdMedicalsApplyingDatesTo_4"/>
+                    <show id="pt:herdMedicalsTreatmentDates_4"/>
+
+                    <show id="pt:herdMedicals_5"/>
+                    <show id="pt:herdMedicalsApplyingDatesFrom_5"/>
+                    <show id="pt:herdMedicalsApplyingDatesTo_5"/>
+                    <show id="pt:herdMedicalsTreatmentDates_5"/>
+
+                    <show id="pt:wetSurname"/>
+                    <show id="pt:wetCity"/>
+                    <show id="pt:wetPhoneNumber"/>
+
+                    <show id="pt:ifAnyMedicalIssues"/>
+                    <show id="pt:treatRace"/>
+                    <show id="pt:historicIssues"/>
+                    <show id="pt:historicDiseaseDurationTo"/>
+                    <show id="pt:ifAnyMedicalIssuesInButcheredHerds"/>
+                    <show id="pt:historicDiseaseInButcheredHerds"/>
+                    <show id="pt:ifHerdWellBeingProvided"/>
+
+                    <show id="pt:starterFeedTimeFrom"/>
+                    <show id="pt:starterFeedTimeTo"/>
+                    <show id="pt:starterType"/>
+                    <show id="pt:growerFeedTimeFrom"/>
+                    <show id="pt:growerFeedTimeTo"/>
+                    <show id="pt:growerType"/>
+                    <show id="pt:finisherFeedTimeFrom"/>
+                    <show id="pt:finisherFeedTimeTo"/>
+                    <show id="pt:finisherType"/>
+
+                    <show id="pt:foodSource"/>
+
+                    <show id="pt:foodExtras_1"/>
+                    <show id="pt:starterName"/>
+                    <show id="pt:foodExtras_2"/>
+                    <show id="pt:growerName"/>
+
+                    <show id="pt:ifSamplesWereTaken"/>
+
+                    <show id="pt:medicalSamplesBioOrChem"/>
+                    <show id="pt:ifBioChemResultsWerePositive"/>
+
+                    <show id="pt:ifSamplesWarePositive"/>
+                    <show id="pt:ifBioChemResultsWerePositive"/>
                 </field-visibility>
                 <appearance>
                     <set id="introduction_fields" appearance='panel' label='Dane podstawowe'/>
@@ -155,6 +203,9 @@
                         <control template="/org/alfresco/components/form/controls/date.ftl">
                             <control-param name="showTime">false</control-param>
                         </control>
+                    </field>
+                    <field id="pt:ifAnimalsWereTreated" set="herd_deployment">
+                        <control template="/org/alfresco/components/form/controls/checkbox.ftl" />
                     </field>
 
                     <field id="pt:herdMedicals_1" set="herd_med">
