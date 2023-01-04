@@ -155,7 +155,7 @@
             </tr>
             <tr>
                 <td colspan="3"><div class=row>Nr gospodarstwa **</div></td>
-                <td colspan="2"><div class=row>Kurnik nr: ${pt:farmId}</div></td>
+                <td colspan="2"><div class=row>${pt:farmId} Kurnik nr: ${pt:chickenHouseNumber}</div></td>
                 <td colspan="5"><div class=row>Badanie poubojowe - data:</div></td>
             </tr>
             <tr>
@@ -192,42 +192,42 @@
             <tr>
                 <td colspan="4" class="tg-40"><div class=row>${pt:herdMedicals$1}</div></td>
                 <td colspan="1" class="tg-cent"><div class=row>od</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom$1}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom_1}</td>
                 <td colspan="1" class="tg-cent"><div class=row>do</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo$1}</td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates$1}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo_1}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates_1}</td>
             </tr>
             <tr>
                 <td colspan="4" class="tg-40"><div class=row>${pt:herdMedicals$2}</div></td>
                 <td colspan="1" class="tg-cent"><div class=row>od</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom$2}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom_2}</td>
                 <td colspan="1" class="tg-cent"><div class=row>do</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo$2}</td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates$2}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo_2}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates_2}</td>
             </tr>
             <tr>
                 <td colspan="4" class="tg-40"><div class=row>${pt:herdMedicals$3}</div></td>
                 <td colspan="1" class="tg-cent"><div class=row>od</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom$3}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom_3}</td>
                 <td colspan="1" class="tg-cent"><div class=row>do</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo$3}</td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates$3}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo_3}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates_3}</td>
             </tr>
             <tr>
                 <td colspan="4" class="tg-40"><div class=row>${pt:herdMedicals$4}</div></td>
                 <td colspan="1" class="tg-cent"><div class=row>od</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom$4}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom_4}</td>
                 <td colspan="1" class="tg-cent"><div class=row>do</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo$4}</td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates$4}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo_4}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates_4}</td>
             </tr>
             <tr>
                 <td colspan="4" class="tg-40"><div class=row>${pt:herdMedicals$5}</div></td>
                 <td colspan="1" class="tg-cent"><div class=row>od</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom$5}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom_5}</td>
                 <td colspan="1" class="tg-cent"><div class=row>do</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo$5}</td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates$5}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo_5}</td>
+                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates_5}</td>
             </tr>
             <tr>
                 <td colspan="2" rowspan="2"><div class="row tg-cent">Nazwisko lekarza sprawującego opiekę nad stadem</div></td>
@@ -309,7 +309,7 @@
             <tr>
                 <td colspan="5"><div class=row>Czy na terenie gospodarstwa stwierdzono wyniki dodatnie</div></td>
                 <td colspan="1"><div class=row></div><input type="checkbox">${pt:ifSamplesWarePositive}</td>
-                <td colspan="4"><div class=row></div>${pt:ifBioChemResultsWerePositive}</td>
+                <td colspan="4"><div class=row></div>Jeśli tak to kiedy ${pt:whenSamplesWerePositive}</td>
             </tr>
             <tr>
                 <td class="tg-30 tg-no_bot_bor" colspan="3"><div class=row>Miejscowość</div></td>

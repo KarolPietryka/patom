@@ -86,12 +86,10 @@
                     <show id="pt:growerName"/>
 
                     <show id="pt:ifSamplesWereTaken"/>
-
                     <show id="pt:medicalSamplesBioOrChem"/>
-                    <show id="pt:ifBioChemResultsWerePositive"/>
 
                     <show id="pt:ifSamplesWarePositive"/>
-                    <show id="pt:ifBioChemResultsWerePositive"/>
+                    <show id="pt:whenSamplesWerePositive"/>
                 </field-visibility>
                 <appearance>
                     <set id="introduction_fields" appearance='panel' label='Dane podstawowe'/>
@@ -332,27 +330,27 @@
                         <control template="/org/alfresco/components/form/controls/textfield.ftl" />
                     </field>
 
-                    <field id="pt:ifAnyMedicalIssues" set="herd_his">
+                    <field id="pt:ifAnyMedicalIssues" set="herd_med">
                         <control template="/org/alfresco/components/form/controls/checkbox.ftl" />
                     </field>
-                    <field id="pt:treatRace" set="herd_his">
+                    <field id="pt:treatRace" set="herd_med">
                         <control template="/org/alfresco/components/form/controls/textfield.ftl" />
                     </field>
-                    <field id="pt:historicIssues" set="herd_his">
+                    <field id="pt:historicIssues" set="herd_med">
                         <control template="/org/alfresco/components/form/controls/textfield.ftl" />
                     </field>
-                    <field id="pt:historicDiseaseDurationTo" set="herd_his">
+                    <field id="pt:historicDiseaseDurationTo" set="herd_med">
                         <control template="/org/alfresco/components/form/controls/date.ftl">
                             <control-param name="showTime">false</control-param>
                         </control>
                     </field>
-                    <field id="pt:ifAnyMedicalIssuesInButcheredHerds" set="herd_his">
+                    <field id="pt:ifAnyMedicalIssuesInButcheredHerds" set="herd_med">
                         <control template="/org/alfresco/components/form/controls/checkbox.ftl" />
                     </field>
-                    <field id="pt:historicDiseaseInButcheredHerds" set="herd_his">
+                    <field id="pt:historicDiseaseInButcheredHerds" set="herd_med">
                         <control template="/org/alfresco/components/form/controls/textfield.ftl" />
                     </field>
-                    <field id="pt:ifHerdWellBeingProvided" set="herd_his">
+                    <field id="pt:ifHerdWellBeingProvided" set="herd_med">
                         <control template="/org/alfresco/components/form/controls/checkbox.ftl" />
                     </field>
 
@@ -428,14 +426,11 @@
                             </control-param>
                         </control>
                     </field>
-                    <field id="pt:ifBioChemResultsWerePositive" set="herd_sampels">
-                        <control template="/org/alfresco/components/form/controls/checkbox.ftl" />
-                    </field>
 
                     <field id="pt:ifSamplesWarePositive" set="herd_sampels">
                         <control template="/org/alfresco/components/form/controls/checkbox.ftl" />
                     </field>
-                    <field id="pt:ifBioChemResultsWerePositive" set="herd_sampels">
+                    <field id="pt:whenSamplesWerePositive" set="herd_sampels">
                         <control template="/org/alfresco/components/form/controls/date.ftl">
                             <control-param name="showTime">false</control-param>
                         </control>
