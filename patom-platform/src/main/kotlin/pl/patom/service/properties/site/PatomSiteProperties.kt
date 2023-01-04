@@ -11,5 +11,6 @@ class PatomSiteProperties @Autowired constructor(
     @Value("\${patom.transformation.pdf.data.time.format}") val pdfFormDocumentNamesDataTimeFormat: String,
     @Value("\${patom.site.forms.pdf.dir.name}") val pdfFormsDirectoryName: String,
     @Value("\${patom.site.template.html.dir.name}") val htmlTemplatesDirectoryName: String,
+    @Value("\${patom.site.template.html.workshop.dir.name}") val htmlTemplatesWorkshopDirectoryName: String,
 ){
 }

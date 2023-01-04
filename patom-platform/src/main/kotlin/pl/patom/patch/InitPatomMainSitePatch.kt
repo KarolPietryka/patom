@@ -31,9 +31,12 @@ class InitPatomMainSitePatch @Autowired constructor(
         AuthenticationUtil.setFullyAuthenticatedUser(AuthenticationUtil.getAdminUserName())
         val patomSite = siteUtils.createSite(siteId, siteName, SiteVisibility.PUBLIC)
         val siteDocumentLibrary: NodeRef = mainNodesGetter.getPatomSiteDocumentLibrary(patomSite)
-        val patomSiteWorkspaceDir = createWorkspaceDir(siteDocumentLibrary)
-        createHtmlTemplatesDir(patomSiteWorkspaceDir)
-        createPdfFormsDir(patomSiteWorkspaceDir)
+        createWorkspaceDir(siteDocumentLibrary).also { workspaceDir ->
+            createHtmlTemplatesDir(workspaceDir).also { htmlTemplatesDir ->
+                createHtmlWorkshopDir(htmlTemplatesDir)
+            }
+            createPdfFormsDir(workspaceDir)
+        }
         return "$PATCH_NAME $APPLIED"
     }
     private fun createWorkspaceDir(siteDocumentLibrary: NodeRef):NodeRef = fileFolderService.create(
@@ -43,9 +46,14 @@ class InitPatomMainSitePatch @Autowired constructor(
     private fun createHtmlTemplatesDir(siteWorkspaceDir: NodeRef) = fileFolderService.create(
         siteWorkspaceDir,
         patomSiteProperties.htmlTemplatesDirectoryName,
-        ContentModel.TYPE_FOLDER)
+        ContentModel.TYPE_FOLDER).nodeRef
     private fun createPdfFormsDir(siteWorkspaceDir: NodeRef) = fileFolderService.create(
         siteWorkspaceDir,
         patomSiteProperties.pdfFormsDirectoryName,
-        ContentModel.TYPE_FOLDER)
+        ContentModel.TYPE_FOLDER).nodeRef
+    private fun createHtmlWorkshopDir(htmlTemplatesDir: NodeRef) = fileFolderService.create(
+        htmlTemplatesDir,
+        patomSiteProperties.htmlTemplatesWorkshopDirectoryName,
+        ContentModel.TYPE_FOLDER).nodeRef
+
 }
