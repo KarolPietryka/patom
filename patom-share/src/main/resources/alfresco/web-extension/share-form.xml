@@ -25,6 +25,7 @@
                     <show id="pt:herdQuantity"/>
                     <show id="pt:herdData"/>
                     <show id="pt:herdDeploymenDate"/>
+                    <show id="pt:ifAnimalsWereTreated"/>
 
                     <show id="pt:herdMedicals_1"/>
                     <show id="pt:herdMedicalsApplyingDatesFrom_1"/>

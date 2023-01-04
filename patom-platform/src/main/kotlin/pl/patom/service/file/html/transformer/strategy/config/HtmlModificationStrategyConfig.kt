@@ -8,10 +8,15 @@ import pl.patom.service.file.html.transformer.strategy.context.HtmlTransformStra
 
 @Configuration
 class HtmlModificationStrategyConfig constructor(
-    @Qualifier("htmlTextModifier") private val htmlModifier: HTMLModifier,
+    @Qualifier("htmlTextModifier") private val htmlTextModifier: HTMLModifier,
     @Qualifier("htmlCheckboxModifier") private val htmlCheckboxModifier: HTMLModifier,
+    @Qualifier("htmlDateModifier") private val htmlDateModifier: HTMLModifier,
 ){
     @Bean("htmlTransformStrategyContext")
     fun htmlTransformStrategyContext() =
-        HtmlTransformStrategyContext(htmlModifier, htmlCheckboxModifier)
+        HtmlTransformStrategyContext(
+            checkboxModifier = htmlCheckboxModifier,
+            textModifier = htmlTextModifier,
+            dateModifier = htmlDateModifier
+        )
 }

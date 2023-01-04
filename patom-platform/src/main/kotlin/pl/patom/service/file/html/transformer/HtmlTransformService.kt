@@ -10,8 +10,12 @@ import org.springframework.stereotype.Service
 import pl.patom.model.content.PATOM_NAMESPACE_PREFIX
 import pl.patom.model.properties.HTML_PROPERTY_PREFIX
 import pl.patom.model.properties.HTML_PROPERTY_SUFFIX
+import pl.patom.model.template.content.html.entity.HtmlEntity
 import pl.patom.service.file.html.transformer.strategy.context.HtmlTransformStrategyContext
 import java.io.Serializable
+import java.util.*
+import org.alfresco.service.cmr.dictionary.DataTypeDefinition.*
+import pl.patom.model.template.content.html.entity.HtmlEntityService
 import java.util.zip.DataFormatException
 
 @Service
@@ -19,24 +23,29 @@ class HtmlTransformService @Autowired constructor(
     @Qualifier("NodeService") private val nodeService: NodeService,
     private val namespaceService: NamespaceService,
     @Qualifier("htmlTransformStrategyContext")
-    private val htmlTransformStrategyContext: HtmlTransformStrategyContext
+    private val htmlTransformStrategyContext: HtmlTransformStrategyContext,
+    private val htmlEntityService: HtmlEntityService
 ){
     fun modifyWithNodeProperties(htmlText: String, nodeRef: NodeRef): String{
-        //var parsedHTMLText = htmlText.replace("font-size: 3px", "font-size: 10px")
         var parsedHtmlText = htmlText
         nodeService.getProperties(nodeRef)
             .filter (this::filterPatomProperties)
             .mapKeys (this::parsePropNameToHtmlForm)
-            .map { Pair(it.key, it.value) }
+            .map { HtmlEntity(it.key, it.value) }
             .forEach {
-                parsedHtmlText = when(it.second){
-                    (it.second is Boolean) ->
-                        htmlTransformStrategyContext.checkboxModifier.modify(it, parsedHtmlText)
-                    (it.second is String) ->
-                        htmlTransformStrategyContext.textModifier.modify(it, parsedHtmlText)
-                    else -> throw DataFormatException("Property ${it.first} has unknown type ${it.second::class.simpleName}" +
-                            " in terms of HTML transformation")
-                }
+                parsedHtmlText =
+                    when (htmlEntityService.getPropertyType(it).name) {
+                        BOOLEAN -> htmlTransformStrategyContext.checkboxModifier.modify(it, parsedHtmlText)
+                        TEXT -> htmlTransformStrategyContext.textModifier.modify(it, parsedHtmlText)
+                        DATE -> htmlTransformStrategyContext.dateModifier.modify(it, parsedHtmlText)
+                        else -> {
+                            throw DataFormatException(
+                                "Property ${it.acsPropInHtmlNotation} has unknown type ${it.acsProp.localName}" +
+                                        " in terms of HTML transformation"
+                            )
+                        }
+                    }
+
         }
         return parsedHtmlText
     }

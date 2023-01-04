@@ -1,7 +1,7 @@
 package pl.patom.service.file.html.transformer.strategy.modifier
 
-import java.io.Serializable
+import pl.patom.model.template.content.html.entity.HtmlEntity
 
 interface HTMLModifier {
-    fun modify(replacePair: Pair<String, Serializable>, htmlText: String): String
+    fun modify(entityToReplace: HtmlEntity, htmlText: String): String
 }
