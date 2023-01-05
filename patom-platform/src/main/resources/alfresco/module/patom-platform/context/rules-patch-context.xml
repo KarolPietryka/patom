@@ -13,5 +13,14 @@
         <property name="fixesToSchema" value="${version.schema}"/>
         <property name="targetSchema" value="100001"/>
     </bean>
+    <bean id="patom.addRewriteRuleToWorkshopDirPatch"
+          class="pl.patom.patch.dir.html.workshop.AddRewriteRuleToWorkshopDirPatch"
+          parent="basePatch">
+        <property name="id" value="patch.patom.addRewriteRuleToWorkshopDirPatch"/>
+        <property name="description" value="patch.addRewriteRuleToWorkshopDirPatch.description"/>
+        <property name="fixesFromSchema" value="0"/>
+        <property name="fixesToSchema" value="${version.schema}"/>
+        <property name="targetSchema" value="100003"/>
+    </bean>
 
 </beans>

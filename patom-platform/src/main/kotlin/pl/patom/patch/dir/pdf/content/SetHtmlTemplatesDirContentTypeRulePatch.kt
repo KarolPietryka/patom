@@ -6,7 +6,6 @@ import org.alfresco.service.cmr.action.ActionService
 import org.alfresco.service.cmr.rule.Rule
 import org.alfresco.service.cmr.rule.RuleService
 import org.alfresco.service.cmr.rule.RuleType
-import pl.patom.action.SET_PATOM_DOCUMENT_TYPE_RULE
 import pl.patom.model.content.TYPE_PATOM_DOCUMENT
 import pl.patom.patch.PatomAbstractPatch
 import pl.patom.service.nodes.navigator.MainNodesGetter
@@ -18,6 +17,7 @@ class SetHtmlTemplatesDirContentTypeRulePatch constructor(
 ): PatomAbstractPatch(){
     companion object{
         val PATCH_NAME = "SetHtmlTemplatesDirContentTypeRulePatch"
+        private const val SET_PATOM_DOCUMENT_TYPE_RULE = "setPatomDocumentTypeRule"
     }
 
     override val patchName: String = PATCH_NAME

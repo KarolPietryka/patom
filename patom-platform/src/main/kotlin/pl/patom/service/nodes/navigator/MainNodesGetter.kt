@@ -57,6 +57,17 @@ class MainNodesGetter @Autowired constructor(
             pathToPathElementsList(SiteService.DOCUMENT_LIBRARY)
         ).nodeRef
 
+    fun getPatomHtmlFacade(): NodeRef =
+        fileFolderService.resolveNamePath(
+            getPatomHtmlTemplateDir(),
+            pathToPathElementsList(patomSiteProperties.htmlTemplateFacadeName)
+        ).nodeRef
+
+    fun getPatomHtmlTemplatesWorkshopDir(): NodeRef =
+        fileFolderService.resolveNamePath(
+            getPatomHtmlTemplateDir(),
+            pathToPathElementsList(patomSiteProperties.htmlTemplatesWorkshopDirectoryName)
+        ).nodeRef
     private fun pathToPathElementsList(path: String) =
         customPathsService.customPathToPathElementsList(path)
 
