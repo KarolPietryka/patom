@@ -15,6 +15,7 @@ import pl.patom.service.file.html.transformer.strategy.context.HtmlTransformStra
 import java.io.Serializable
 import java.util.*
 import org.alfresco.service.cmr.dictionary.DataTypeDefinition.*
+import org.alfresco.service.cmr.dictionary.DictionaryService
 import pl.patom.model.template.content.html.entity.HtmlEntityService
 import java.util.zip.DataFormatException
 
@@ -24,12 +25,15 @@ class HtmlTransformService @Autowired constructor(
     private val namespaceService: NamespaceService,
     @Qualifier("htmlTransformStrategyContext")
     private val htmlTransformStrategyContext: HtmlTransformStrategyContext,
-    private val htmlEntityService: HtmlEntityService
+    private val htmlEntityService: HtmlEntityService,
+    private val dictionaryService: DictionaryService
+
 ){
     fun modifyWithNodeProperties(htmlText: String, nodeRef: NodeRef): String{
+        val nodeProperties = nodeService.getProperties(nodeRef)
         var parsedHtmlText = htmlText
-        nodeService.getProperties(nodeRef)
-            .filter (this::filterPatomProperties)
+        dictionaryService.getType(nodeService.getType(nodeRef)).properties
+            .mapValues { nodeProperties[it.value.name] }
             .mapKeys (this::parsePropNameToHtmlForm)
             .map { HtmlEntity(it.key, it.value) }
             .forEach {
@@ -51,6 +55,6 @@ class HtmlTransformService @Autowired constructor(
     }
     private fun filterPatomProperties(prop: Map.Entry<QName, Serializable>) =
         namespaceService.getPrefixes(prop.key.namespaceURI).any { it == PATOM_NAMESPACE_PREFIX }
-    private fun parsePropNameToHtmlForm(prop: Map.Entry<QName, Serializable>) =
+    private fun parsePropNameToHtmlForm(prop: Map.Entry<QName, Serializable?>) =
         HTML_PROPERTY_PREFIX + prop.key.toPrefixString(namespaceService) + HTML_PROPERTY_SUFFIX
 }

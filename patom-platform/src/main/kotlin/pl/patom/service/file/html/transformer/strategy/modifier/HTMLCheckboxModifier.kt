@@ -8,7 +8,7 @@ import pl.patom.model.template.content.html.entity.HtmlEntity
 class HTMLCheckboxModifier: HTMLModifier {
     override fun modify(entityToReplace: HtmlEntity, htmlText: String): String {
         var htmlTextParsed = htmlText
-        val checkBoxState = HtmlCheckboxState.fromBoolean(entityToReplace.acsPropValue as Boolean)
+        val checkBoxState = HtmlCheckboxState.fromBoolean(entityToReplace.acsPropValue as? Boolean ?: false)
         val propOccurIndex = htmlText.indexOf(entityToReplace.acsPropInHtmlNotation)
         while (htmlTextParsed.indexOf(entityToReplace.acsPropInHtmlNotation) != -1){
             //remove ">" before

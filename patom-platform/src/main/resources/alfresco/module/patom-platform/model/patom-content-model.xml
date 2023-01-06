@@ -107,7 +107,6 @@
                 <property name="pt:herdDeploymenDate">
                     <title>Data wstawienia</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 
                 <property name="pt:ifAnimalsWereTreated">
@@ -124,17 +123,15 @@
                 <property name="pt:herdMedicalsApplyingDatesFrom_1">
                     <title>Czas podawania od (preparet 1)</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:herdMedicalsApplyingDatesTo_1">
                     <title>Czas podawania do (preparet 1)</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:herdMedicalsTreatmentDates_1">
                     <title>Kuracja do (preparet 1)</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
+                    
 
                 </property>
                 <property name="pt:herdMedicals_2">
@@ -145,17 +142,14 @@
                 <property name="pt:herdMedicalsApplyingDatesFrom_2">
                     <title>Czas podawania od (preparet 2)</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:herdMedicalsApplyingDatesTo_2">
                     <title>Czas podawania do (preparet 2)</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:herdMedicalsTreatmentDates_2">
                     <title>Kuracja do (preparet 2)</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:herdMedicals_3">
                     <title>Stosowane preparaty lecznicze (preparet 3)</title>
@@ -165,17 +159,14 @@
                 <property name="pt:herdMedicalsApplyingDatesFrom_3">
                     <title>Czas podawania od (preparet 3)</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:herdMedicalsApplyingDatesTo_3">
                     <title>Czas podawania do (preparet 3)</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:herdMedicalsTreatmentDates_3">
                     <title>Kuracja do (preparet 3)</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:herdMedicals_4">
                     <title>Stosowane preparaty lecznicze (preparet 4)</title>
@@ -185,17 +176,14 @@
                 <property name="pt:herdMedicalsApplyingDatesFrom_4">
                     <title>Czas podawania od (preparet 4)</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:herdMedicalsApplyingDatesTo_4">
                     <title>Czas podawania do (preparet 4)</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:herdMedicalsTreatmentDates_4">
                     <title>Kuracja do (preparet 4)</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:herdMedicals_5">
                     <title>Stosowane preparaty lecznicze (preparet 5)</title>
@@ -205,17 +193,14 @@
                 <property name="pt:herdMedicalsApplyingDatesFrom_5">
                     <title>Czas podawania od (preparet 5)</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:herdMedicalsApplyingDatesTo_5">
                     <title>Czas podawania do (preparet 5)</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:herdMedicalsTreatmentDates_5">
                     <title>Kuracja do (preparet 5)</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
 
                 <property name="pt:wetSurname">
@@ -253,7 +238,6 @@
                 <property name="pt:historicDiseaseDurationTo">
                     <title>Do kiedy</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:ifAnyMedicalIssuesInButcheredHerds">
                     <title>Czy u zwierząt poddanych dotychczas ubojowi stwierdzono choroby</title>
@@ -274,12 +258,10 @@
                 <property name="pt:starterFeedTimeFrom">
                     <title>Starter podawano od</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:starterFeedTimeTo">
                     <title>Starter podawano do</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:starterType">
                     <title>Rodzaj startera</title>
@@ -289,12 +271,10 @@
                 <property name="pt:growerFeedTimeFrom">
                     <title>Grower podawano od</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:growerFeedTimeTo">
                     <title>Grower podawano do</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:growerType">
                     <title>Rodzaj growera</title>
@@ -304,12 +284,10 @@
                 <property name="pt:finisherFeedTimeFrom">
                     <title>Finiszer podawanoa od</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:finisherFeedTimeTo">
                     <title>Finiszer podawanoa do</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
                 <property name="pt:finisherType">
                     <title>Rodzaj finishera</title>
@@ -363,7 +341,6 @@
                 <property name="pt:whenSamplesWerePositive">
                     <title>Jeśli tak to kiedy</title>
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
 
 
@@ -373,7 +350,6 @@
                 </property>
                 <property name="pt:signDate">
                     <type>d:date</type>
-                    <default>2023-01-01</default>
                 </property>
             </properties>
         </type>
