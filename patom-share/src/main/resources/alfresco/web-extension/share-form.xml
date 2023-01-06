@@ -103,6 +103,7 @@
                             <control-param name="showTime">false</control-param>
                         </control>
                     </field>
+<!--                    Miejscowość-->
                     <field id="pt:signCity" set="introduction_fields">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
@@ -116,6 +117,7 @@
                     <field id="pt:chickenHouseNumber" set="introduction_fields">
                         <control template="/org/alfresco/components/form/controls/textfield.ftl" />
                     </field>
+<!--                    Wypełnia właścieciel - Imie-->
                     <field id="pt:farmOwnerFirstName" set="introduction_fields">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
@@ -123,6 +125,7 @@
                             </control-param>
                         </control>
                     </field>
+<!--                    Wypełnia właścieciel - Nazwisko-->
                     <field id="pt:farmOwnerSurname" set="introduction_fields" >
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
@@ -130,6 +133,7 @@
                             </control-param>
                         </control>
                     </field>
+<!--                    Wypełnia właściciel	- Kod pocztowy, Poczta-->
                     <field id="pt:farmZipCode" set="introduction_fields">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
@@ -137,6 +141,7 @@
                             </control-param>
                         </control>
                     </field>
+<!--                    Wypełnia właściciel	- Miejscowość-->
                     <field id="pt:farmCity" set="introduction_fields">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
@@ -144,6 +149,7 @@
                             </control-param>
                         </control>
                     </field>
+<!--                    Wypełnia właściciel	- ulica, nr domu-->
                     <field id="pt:farmStreet" set="introduction_fields">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
@@ -151,6 +157,7 @@
                             </control-param>
                         </control>
                     </field>
+<!--                    Wypełnia właściciel	- Nr gospodarstwa-->
                     <field id="pt:farmId" set="introduction_fields">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
@@ -158,6 +165,7 @@
                             </control-param>
                         </control>
                     </field>
+<!--                    Wypełnia właściciel	-Nr NIP-->
                     <field id="pt:farmOwnerNIP" set="introduction_fields">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
@@ -165,7 +173,7 @@
                             </control-param>
                         </control>
                     </field>
-
+<!--                    Adres wylęgarni:-->
                     <field id="pt:farmBreedingGroundAddress" set="introduction_fields">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
@@ -173,6 +181,7 @@
                             </control-param>
                         </control>
                     </field>
+<!--                    Nazwa wylęgarni:-->
                     <field id="pt:farmBreedingGroundName" set="introduction_fields">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
@@ -180,6 +189,7 @@
                             </control-param>
                         </control>
                     </field>
+<!--                   Numer weterynaryjny wylęgarni -->
                     <field id="pt:farmBreedingGroundId" set="introduction_fields">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
@@ -394,7 +404,7 @@
                     <field id="pt:finisherType" set="herd_feed">
                         <control template="/org/alfresco/components/form/controls/textfield.ftl" />
                     </field>
-
+<!--                Pochodzenie paszy otrzymanej przez zwierzęta-->
                     <field id="pt:foodSource" set="herd_feed">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
@@ -419,7 +429,7 @@
                     <field id="pt:ifSamplesWereTaken" set="herd_sampels">
                         <control template="/org/alfresco/components/form/controls/checkbox.ftl" />
                     </field>
-
+<!--                Czy na terenie gospodarstwa pobierano próbki do badań monitoringowych pozostałości biologicznych i chemicznych-->
                     <field id="pt:medicalSamplesBioOrChem" set="herd_sampels">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
