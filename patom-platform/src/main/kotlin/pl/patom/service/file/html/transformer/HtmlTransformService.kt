@@ -16,6 +16,7 @@ import java.io.Serializable
 import java.util.*
 import org.alfresco.service.cmr.dictionary.DataTypeDefinition.*
 import org.alfresco.service.cmr.dictionary.DictionaryService
+import pl.patom.model.content.ASPECT_PATOM_FACADE
 import pl.patom.model.template.content.html.entity.HtmlEntityService
 import java.util.zip.DataFormatException
 
@@ -32,7 +33,7 @@ class HtmlTransformService @Autowired constructor(
     fun modifyWithNodeProperties(htmlText: String, nodeRef: NodeRef): String{
         val nodeProperties = nodeService.getProperties(nodeRef)
         var parsedHtmlText = htmlText
-        dictionaryService.getType(nodeService.getType(nodeRef)).properties
+        dictionaryService.getAspect(ASPECT_PATOM_FACADE).properties
             .mapValues { nodeProperties[it.value.name] }
             .mapKeys (this::parsePropNameToHtmlForm)
             .map { HtmlEntity(it.key, it.value) }

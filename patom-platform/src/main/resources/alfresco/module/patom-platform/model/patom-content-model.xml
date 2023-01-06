@@ -24,6 +24,13 @@
         <type name="pt:document">
             <title>Patom document type</title>
             <parent>cm:content</parent>
+            <mandatory-aspects>
+                <aspect>pt:patomFacade</aspect>
+            </mandatory-aspects>
+        </type>
+    </types>
+    <aspects>
+        <aspect name="pt:patomFacade">
             <properties>
                 <property name="pt:documentId">
                     <title>Document Identification Number</title>
@@ -108,7 +115,7 @@
                     <title>Data wstawienia</title>
                     <type>d:date</type>
                 </property>
-                
+
                 <property name="pt:ifAnimalsWereTreated">
                     <title>Czy zwierzęta były leczone</title>
                     <type>d:boolean</type>
@@ -131,7 +138,7 @@
                 <property name="pt:herdMedicalsTreatmentDates_1">
                     <title>Kuracja do (preparet 1)</title>
                     <type>d:date</type>
-                    
+
 
                 </property>
                 <property name="pt:herdMedicals_2">
@@ -352,7 +359,7 @@
                     <type>d:date</type>
                 </property>
             </properties>
-        </type>
-    </types>
+        </aspect>
+    </aspects>
 
 </model>

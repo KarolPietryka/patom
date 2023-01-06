@@ -45,6 +45,7 @@ class ToPDF @Autowired constructor(
 
         val htmlFacade = htmlFacadeNodeCreatorService.getHtmlFacadeModel(htmlFacadeNodeRef)
         val outputPdfFilePath = getPdfEmptyFile()
+        //Parsing prop in html notation to acs values
         val inputHtmlFilePath = getHtmlTemplateFileWithContent(htmlFacade)
 
         val transformationCommand = generateWkHtmlToPdfCommand(inputHtmlFilePath, outputPdfFilePath)
