@@ -1,14 +1,19 @@
 package pl.patom.web.script
 
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.alfresco.service.cmr.repository.NodeRef
 import org.alfresco.util.TempFileProvider
+import org.apache.http.HttpStatus
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.extensions.webscripts.AbstractWebScript
 import org.springframework.extensions.webscripts.WebScriptRequest
 import org.springframework.extensions.webscripts.WebScriptResponse
+import org.springframework.http.MediaType
 import org.springframework.stereotype.Component
 import pl.patom.model.rest.request.ToPDFRequest
+import pl.patom.model.rest.response.ToPdfResponse
 import pl.patom.model.template.facade.HtmlFacadeModel
 import pl.patom.service.properties.transform.ToPdfTransformationProperties
 import pl.patom.service.properties.transform.ToPdfTransformationProperties.Companion.PROP_TRANSFORMATION_COMMAND
@@ -32,6 +37,7 @@ class ToPDF @Autowired constructor(
 
     companion object{
         val objectMapper = jacksonObjectMapper()
+        private val mapper = ObjectMapper().registerModule(KotlinModule())
     }
     override fun execute(req: WebScriptRequest, res: WebScriptResponse?) {
         val htmlFacadeNodeRef = NodeRef(
@@ -45,7 +51,10 @@ class ToPDF @Autowired constructor(
         //Runs wkHtmlToPdf process with puts content into outputPdfFile
         ProcessBuilder(transformationCommand).start().waitFor()
 
-        pdfTransformedDocumentCreatorService.createPdfForm(outputPdfFilePath)
+        val pdfNodeRef = pdfTransformedDocumentCreatorService.createPdfForm(outputPdfFilePath)
+        res?.setStatus((HttpStatus.SC_OK))
+        res?.setContentType("${MediaType.APPLICATION_JSON_VALUE};charset=UTF-8")
+        res?.writer?.use { it.write(mapper.writeValueAsString(ToPdfResponse(pdfNodeRef.id))) }
     }
 
     private fun getPdfEmptyFile() =

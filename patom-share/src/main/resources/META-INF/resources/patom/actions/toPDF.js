@@ -9,12 +9,17 @@
 					callback: {
 						fn: function toPDFSuccess(response) {
 							response.json = JSON.parse(response.serverResponse.responseText);
-							var title = response.json.success === true ? "Sukces" : "Błąd";
-              var responseMsg = response.json.msg || title;
-							Alfresco.util.PopupManager.displayPrompt({
-                title: title,
-                text: responseMsg
-              });
+							if(response.serverResponse.status == 200){
+                window.location.href = "/share/proxy/alfresco/slingshot/node/content/workspace/SpacesStore/" + response.json.pdfNodeId;
+							}
+							else{
+                var title = "Błąd transformacji PDF";
+                var responseMsg = response.json.msg || title;
+                  Alfresco.util.PopupManager.displayPrompt({
+                    title: title,
+                    text: responseMsg
+                  });
+							}
 						},
 						scope: this
 					}
