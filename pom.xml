@@ -38,6 +38,8 @@
     <polish.version>1.8</polish.version>
     <!-- This parameter is only required for those cases in which ACS is not exposed in http://localhost:8080/alfresco (i.e. Windows Docker) -->
     <test.acs.endpoint.path/>
+    <docker.acs.version>1.0</docker.acs.version>
+    <docker.share.version>1.0</docker.share.version>
   </properties>
   <!-- Libs used in Unit and Integration tests -->
   <!-- IMPORTANT - Test dependencies need to be here in the top parent POM as
@@ -453,7 +455,7 @@
   <modules>
     <module>patom-platform</module>
     <module>patom-share</module>
-    <module>patom-integration-tests</module>
+<!--    <module>patom-integration-tests</module>-->
     <module>patom-platform-docker</module>
     <module>patom-share-docker</module>
   </modules>

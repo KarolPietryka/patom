@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   patom-share:
-    image: alfresco-share-patom:development
+    image: alfresco-share-patom:${docker.share.version}
     container_name: patom-share
     build:
       dockerfile: ./Dockerfile
@@ -16,7 +16,7 @@ services:
       - "${share.port}:8080"
       - "${share.debug.port}:8888"
   patom-acs:
-    image: alfresco-content-services-patom:development
+    image: alfresco-content-services-patom:${docker.acs.version}
     container_name: patom-acs
     build:
       dockerfile: ./Dockerfile
