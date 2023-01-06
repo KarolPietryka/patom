@@ -10,6 +10,8 @@ services:
       CATALINA_OPTS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=0.0.0.0:8888"
       REPO_HOST: patom-acs
       REPO_PORT: 8080
+    volumes:
+      - ./share/share-form.xml:/usr/local/tomcat/webapps/share/WEB-INF/classes/alfresco/web-extension/share-form.xml
     ports:
       - "${share.port}:8080"
       - "${share.debug.port}:8888"
