@@ -12,7 +12,7 @@ class HtmlDateModifier: HTMLModifier {
     private val logger = LogFactory.getLog(HtmlDateModifier::class.java)
 
     override fun modify(entityToReplace: HtmlEntity, htmlText: String): String {
-        val df = SimpleDateFormat("yyyy-mm-dd")
+        val df = SimpleDateFormat("yyyy-MM-dd")
         logger.debug(entityToReplace.acsPropInHtmlNotation + entityToReplace.acsPropValue as? Date )
         return htmlText.replace(
             entityToReplace.acsPropInHtmlNotation,
