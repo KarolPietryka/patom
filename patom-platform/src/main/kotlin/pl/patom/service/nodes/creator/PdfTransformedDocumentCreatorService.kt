@@ -25,13 +25,16 @@ class PdfTransformedDocumentCreatorService @Autowired constructor(
     private val patomSiteProperties: PatomSiteProperties,
     private val dateTimePathCreator: DateTimePathCreator,
     ){
+    companion object{
+        const val PDF_EXT = ".pdf"
+    }
      fun createPdfForm(outputPdfFilePath: Path): NodeRef {
         val pdfNodeRef = nodeService.createNode(
             dateTimePathCreator.createCurrentDatePath(mainNodesGetter.getPatomPdfFormsDir()),
             ContentModel.ASSOC_CONTAINS,
             PDF_FORM_CHILD_ASSOC_QNAME,
             ContentModel.TYPE_CONTENT,
-            mapOf(ContentModel.PROP_NAME to "${patomSiteProperties.pdfFormNameBase}--${getCurrentDataTime()}")
+            mapOf(ContentModel.PROP_NAME to "${patomSiteProperties.pdfFormNameBase}--${getCurrentDataTime()}$PDF_EXT")
         )
         val pdfFileContentWriter = contentService.getWriter(pdfNodeRef.childRef, ContentModel.PROP_CONTENT,true);
         pdfFileContentWriter.mimetype = MimetypeMap.MIMETYPE_PDF
