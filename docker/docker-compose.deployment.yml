@@ -1,0 +1,57 @@
+version: '3.4'
+services:
+  patom-share:
+    image: alfresco-share-patom:1.0
+    container_name: patom-share
+    environment:
+      CATALINA_OPTS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=0.0.0.0:8888"
+      REPO_HOST: patom-acs
+      REPO_PORT: 8080
+    volumes:
+      - ./share/share-form.xml:/usr/local/tomcat/webapps/share/WEB-INF/classes/alfresco/web-extension/share-form.xml
+    ports:
+      - "8180:8080"
+  patom-acs:
+    image: alfresco-content-services-patom:1.0
+    container_name: patom-acs
+    environment:
+      CATALINA_OPTS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=0.0.0.0:8888"
+    ports:
+      - "8080:8080"
+    volumes:
+      - patom-acs-volume:/usr/local/tomcat/alf_data
+    depends_on:
+      - patom-postgres
+  patom-postgres:
+    image: postgres:9.6
+    container_name: patom-postgres
+    environment:
+      POSTGRES_DB: alfresco
+      POSTGRES_USER: alfresco
+      POSTGRES_PASSWORD: alfresco
+    command: postgres -c max_connections=300 -c log_min_messages=LOG
+    ports:
+      - "5432:5432"
+    volumes:
+      - patom-db-volume:/var/lib/postgresql/data
+  patom-ass:
+    image: alfresco/alfresco-search-services:1.2.0
+    container_name: patom-ass
+    environment:
+      SOLR_ALFRESCO_HOST: patom-acs
+      SOLR_ALFRESCO_PORT: 8080
+      SOLR_SOLR_HOST: patom-ass
+      SOLR_SOLR_PORT: 8983
+      SOLR_CREATE_ALFRESCO_DEFAULTS: alfresco,archive
+    ports:
+      - "8983:8983"
+    volumes:
+      - patom-ass-volume:/opt/alfresco-search-services/contentstore
+      - patom-ass-volume:/opt/alfresco-search-services/data
+volumes:
+  patom-acs-volume:
+    external: true
+  patom-db-volume:
+    external: true
+  patom-ass-volume:
+    external: true
