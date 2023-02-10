@@ -8,6 +8,7 @@
                     <show id="pt:signDate"/>
                     <show id="pt:signCity"/>
                     <show id="pt:farmName"/>
+                    <show id="pt:farmAddress"/>
                     <show id="pt:chickenHouseNumber"/>
                     <show id="pt:farmOwnerFirstName"/>
                     <show id="pt:farmOwnerSurname"/>
@@ -111,10 +112,15 @@
                             </control-param>
                         </control>
                     </field>
+<!--                    Nazwa fermy-->
                     <field id="pt:farmName" set="introduction_fields">
                         <control template="/org/alfresco/components/form/controls/textfield.ftl" />
                     </field>
                     <field id="pt:chickenHouseNumber" set="introduction_fields">
+                        <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+                    </field>
+<!--                    Adres fermy-->
+                    <field id="pt:farmAddress" set="introduction_fields">
                         <control template="/org/alfresco/components/form/controls/textfield.ftl" />
                     </field>
 <!--                    Wypełnia właścieciel - Imie-->

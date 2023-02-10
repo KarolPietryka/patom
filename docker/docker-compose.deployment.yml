@@ -1,18 +1,18 @@
 version: '3.4'
 services:
   patom-share:
-    image: alfresco-share-patom:1.0
+    image: karoljpietryka/patom-share:1.0.0
     container_name: patom-share
     environment:
       CATALINA_OPTS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=0.0.0.0:8888"
       REPO_HOST: patom-acs
       REPO_PORT: 8080
     volumes:
-      - ./share/share-form.xml:/usr/local/tomcat/webapps/share/WEB-INF/classes/alfresco/web-extension/share-form.xml
+      - ./share-form.xml:/usr/local/tomcat/webapps/share/WEB-INF/classes/alfresco/web-extension/share-form.xml
     ports:
       - "8180:8080"
   patom-acs:
-    image: alfresco-content-services-patom:1.0
+    image: karoljpietryka/patom-acs:1.0.0
     container_name: patom-acs
     environment:
       CATALINA_OPTS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=0.0.0.0:8888"
@@ -35,7 +35,7 @@ services:
     volumes:
       - patom-db-volume:/var/lib/postgresql/data
   patom-ass:
-    image: alfresco/alfresco-search-services:1.2.0
+    image: karoljpietryka/patom-ass:1.0.0
     container_name: patom-ass
     environment:
       SOLR_ALFRESCO_HOST: patom-acs

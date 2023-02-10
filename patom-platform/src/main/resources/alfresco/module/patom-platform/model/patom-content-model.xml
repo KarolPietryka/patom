@@ -48,6 +48,11 @@
                     <type>d:text</type>
                     <default></default>
                 </property>
+                <property name="pt:farmAddress">
+                    <title>Adres fermy</title>
+                    <type>d:text</type>
+                    <default></default>
+                </property>
 
                 <property name="pt:farmOwnerFirstName">
                     <title>Imie</title>
