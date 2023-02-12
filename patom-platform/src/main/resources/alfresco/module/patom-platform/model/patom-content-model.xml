@@ -141,7 +141,7 @@
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicalsTreatmentDates_1">
-                    <title>Kuracja do (preparet 1)</title>
+                    <title>Kurencja do (preparet 1)</title>
                     <type>d:date</type>
 
 
@@ -160,7 +160,7 @@
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicalsTreatmentDates_2">
-                    <title>Kuracja do (preparet 2)</title>
+                    <title>Kurencja do (preparet 2)</title>
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicals_3">
@@ -177,7 +177,7 @@
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicalsTreatmentDates_3">
-                    <title>Kuracja do (preparet 3)</title>
+                    <title>Kurencja do (preparet 3)</title>
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicals_4">
@@ -194,7 +194,7 @@
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicalsTreatmentDates_4">
-                    <title>Kuracja do (preparet 4)</title>
+                    <title>Kurencja do (preparet 4)</title>
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicals_5">
@@ -211,7 +211,7 @@
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicalsTreatmentDates_5">
-                    <title>Kuracja do (preparet 5)</title>
+                    <title>Kurencja do (preparet 5)</title>
                     <type>d:date</type>
                 </property>
 
