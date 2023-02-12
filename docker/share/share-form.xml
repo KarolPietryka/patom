@@ -409,7 +409,7 @@
                     <field id="pt:foodSource" set="herd_feed">
                         <control template="/org/alfresco/components/form/controls/selectone.ftl">
                             <control-param name="options">
-                               Władna|Własna,Z zakupu|Z zakupu
+                               Własna|Własna,Z zakupu|Z zakupu
                             </control-param>
                         </control>
                     </field>
