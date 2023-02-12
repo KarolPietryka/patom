@@ -47,18 +47,24 @@
   width: 100%;
   table-layout: fixed;
 }
+  .tg .height_50{
+    height: 50px;
+  }
   .tg td{
     border-color: black;
     border-style: solid;
     border-width: 0.3px;
     font-family: Arial, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     overflow: hidden;
     padding: 0.2em 0.3em;
     word-break: normal;
   }
     .tg .row{
         height:24px;
+    }
+    .tg .usrData{
+        font-weight: bold;
     }
     .tg .td.wrap{
       overflow-wrap: break-word;
@@ -127,117 +133,117 @@
             <tbody>
             <tr>
                 <td colspan="3"><div class=row>Nazwisko</div></td>
-                <td colspan="2"><div class=row>${pt:farmOwnerFirstName}</div></td>
+                <td colspan="2"><div class="row usrData">${pt:farmOwnerFirstName}</div></td>
                 <td colspan="3"><div class=row>Dostarczono do uboju</div></td>
                 <td colspan="2"></td>
             </tr>
             <tr>
                 <td colspan="3"><div class=row>Imię</div></td>
-                <td colspan="2"><div class=row>${pt:farmOwnerSurname}</div></td>
+                <td colspan="2"><div class="row usrData">${pt:farmOwnerSurname}</div></td>
                 <td colspan="3"><div class=row>Poddano ubojowi</div></td>
                 <td colspan="2"></td>
             </tr>
             <tr>
                 <td colspan="3"><div class=row>Kod pocztowy, Poczta</div></td>
-                <td colspan="2"><div class=row>${pt:farmZipCode}</div></td>
+                <td colspan="2"><div class="row usrData">${pt:farmZipCode}</div></td>
                 <td class="tg-bold" colspan="5"><div class=row>Wypełnia urząd lek. wet.</div></td>
             </tr>
             <tr>
                 <td colspan="3"><div class=row>Miejscowość</div></td>
-                <td colspan="2"><div class=row>${pt:farmCity}</div></td>
+                <td colspan="2"><div class="row usrData">${pt:farmCity}</div></td>
                 <td colspan="5"><div class=row>Badania przedubojowe - data:</div></td>
             </tr>
             <tr>
                 <td colspan="3"><div class=row>ulica, nr domu</div></td>
-                <td colspan="2"><div class=row>${pt:farmStreet}</div></td>
+                <td colspan="2"><div class="row usrData">${pt:farmStreet}</div></td>
                 <td colspan="3"><div class=row>Poz. Dz:</div></td>
                 <td colspan="2"></td>
             </tr>
             <tr>
                 <td colspan="3"><div class=row>Nr gospodarstwa **</div></td>
-                <td colspan="2"><div class=row>${pt:farmId} Kurnik nr: ${pt:chickenHouseNumber}</div></td>
+                <td colspan="2"><div class="row usrData">${pt:farmId} Kurnik nr: ${pt:chickenHouseNumber}</div></td>
                 <td colspan="5"><div class=row>Badanie poubojowe - data:</div></td>
             </tr>
             <tr>
                 <td colspan="3"><div class=row>Nr NIP</div></td>
-                <td colspan="2"><div class=row>${pt:farmOwnerNIP}</div></td>
+                <td colspan="2"><div class="row usrData">${pt:farmOwnerNIP}</div></td>
                 <td colspan="3"><div class=row>Poz. Dz:</div></td>
                 <td colspan="2"></td>
             </tr>
             <tr>
-                <td colspan="10"><div class=row>Adres, nazwa oraz numer weterynaryjny wylęgarni: ${pt:farmBreedingGroundAddress} ${pt:farmBreedingGroundName} ${pt:farmBreedingGroundId}</div></td>
+                <td colspan="10"><div class="row usrData">Adres, nazwa oraz numer weterynaryjny wylęgarni: ${pt:farmBreedingGroundAddress} ${pt:farmBreedingGroundName} ${pt:farmBreedingGroundId}</div></td>
             </tr>
             <tr>
                 <td class="tg-bold" colspan="10"><div class=row>Deklaracja właściciela</div></td>
             </tr>
-            <tr>
+            <tr class="height_50">
                 <td colspan="3"><div class="row tg-cent">Zwierzęta wywożone do rzeźni: </div></td>
-                <td colspan="3"><div class=row>Gatunek kurcząt brojlery. Rasa: ${pt:herdRace}</div></td>
-                <td colspan="2"><div class=row>Liczba zwierząt: ${pt:herdQuantity}</div></td>
-                <td colspan="2"><div class=row>Data wstawienia: ${pt:herdDeploymenDate}</div></td>
+                <td colspan="3"><div class="row usrData">Gatunek kurcząt brojlery. Rasa: ${pt:herdRace}</div></td>
+                <td colspan="2"><div class="row usrData">Liczba zwierząt: ${pt:herdQuantity}</div></td>
+                <td colspan="2"><div class="row usrData">Data wstawienia: ${pt:herdDeploymenDate}</div></td>
             </tr>
             <tr>
                 <td colspan="10">
-                    <div class=row>Czy zwierzęta były leczone:
+                    <div class="row">Czy zwierzęta były leczone:
                         <input type="checkbox">${pt:ifAnimalsWereTreated} jeśli zaznaczono, wypełnij poniżej:
                     </div>
                 </td>
             </tr>
             <tr>
-                <td rowspan="6" colspan="1" class="tg-cent"><div class="row wrap">Stosowane preparaty lecznicze dla których określono okresy karencji</div></td>
+                <td rowspan="6" colspan="1" class="tg-cent"><div class="wrap">Stosowane preparaty lecznicze dla których określono okresy karencji</div></td>
                 <td colspan="4" class="tg-40 tg-cent"><div class=row>Nazwa</div></td>
                 <td colspan="4" class="tg-40 tg-cent"><div class=row>Czas podawania</div></td>
                 <td colspan="1" class="tg-cent"><div class=row>Kurencja do</div></td>
             </tr>
             <tr>
-                <td colspan="4" class="tg-40"><div class=row>${pt:herdMedicals_1}</div></td>
+                <td colspan="4" class="tg-40"><div class="row usrData">${pt:herdMedicals_1}</div></td>
                 <td colspan="1" class="tg-cent"><div class=row>od</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom_1}</td>
-                <td colspan="1" class="tg-cent"><div class=row>do</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo_1}</td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates_1}</td>
+                <td colspan="1" class="tg-cent usrData">${pt:herdMedicalsApplyingDatesFrom_1}</td>
+                <td colspan="1" class="tg-cent usrData"><div class=row>do</div></td>
+                <td colspan="1" class="tg-cent usrData">${pt:herdMedicalsApplyingDatesTo_1}</td>
+                <td colspan="1" class="tg-cent usrData">${pt:herdMedicalsTreatmentDates_1}</td>
             </tr>
             <tr>
-                <td colspan="4" class="tg-40"><div class=row>${pt:herdMedicals_2}</div></td>
+                <td colspan="4" class="tg-40"><div class="row usrData">${pt:herdMedicals_2}</div></td>
                 <td colspan="1" class="tg-cent"><div class=row>od</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom_2}</td>
+                <td colspan="1" class="tg-cent usrData">${pt:herdMedicalsApplyingDatesFrom_2}</td>
                 <td colspan="1" class="tg-cent"><div class=row>do</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo_2}</td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates_2}</td>
+                <td colspan="1" class="tg-cent usrData">${pt:herdMedicalsApplyingDatesTo_2}</td>
+                <td colspan="1" class="tg-cent usrData">${pt:herdMedicalsTreatmentDates_2}</td>
             </tr>
             <tr>
-                <td colspan="4" class="tg-40"><div class=row>${pt:herdMedicals_3}</div></td>
+                <td colspan="4" class="tg-40"><div class="row usrData">${pt:herdMedicals_3}</div></td>
                 <td colspan="1" class="tg-cent"><div class=row>od</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom_3}</td>
+                <td colspan="1" class="tg-cent usrData">${pt:herdMedicalsApplyingDatesFrom_3}</td>
                 <td colspan="1" class="tg-cent"><div class=row>do</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo_3}</td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates_3}</td>
+                <td colspan="1" class="tg-cent usrData">${pt:herdMedicalsApplyingDatesTo_3}</td>
+                <td colspan="1" class="tg-cent usrData">${pt:herdMedicalsTreatmentDates_3}</td>
             </tr>
             <tr>
-                <td colspan="4" class="tg-40"><div class=row>${pt:herdMedicals_4}</div></td>
+                <td colspan="4" class="tg-40"><div class="row usrData">${pt:herdMedicals_4}</div></td>
                 <td colspan="1" class="tg-cent"><div class=row>od</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom_4}</td>
+                <td colspan="1" class="tg-cent usrData">${pt:herdMedicalsApplyingDatesFrom_4}</td>
                 <td colspan="1" class="tg-cent"><div class=row>do</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo_4}</td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates_4}</td>
+                <td colspan="1" class="tg-cent usrData">${pt:herdMedicalsApplyingDatesTo_4}</td>
+                <td colspan="1" class="tg-cent usrData">${pt:herdMedicalsTreatmentDates_4}</td>
             </tr>
             <tr>
-                <td colspan="4" class="tg-40"><div class=row>${pt:herdMedicals_5}</div></td>
+                <td colspan="4" class="tg-40"><div class="row usrData">${pt:herdMedicals_5}</div></td>
                 <td colspan="1" class="tg-cent"><div class=row>od</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesFrom_5}</td>
+                <td colspan="1" class="tg-cent usrData">${pt:herdMedicalsApplyingDatesFrom_5}</td>
                 <td colspan="1" class="tg-cent"><div class=row>do</div></td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsApplyingDatesTo_5}</td>
-                <td colspan="1" class="tg-cent">${pt:herdMedicalsTreatmentDates_5}</td>
+                <td colspan="1" class="tg-cent usrData">${pt:herdMedicalsApplyingDatesTo_5}</td>
+                <td colspan="1" class="tg-cent usrData">${pt:herdMedicalsTreatmentDates_5}</td>
             </tr>
             <tr>
-                <td colspan="2" rowspan="2"><div class="row tg-cent">Nazwisko lekarza sprawującego opiekę nad stadem</div></td>
-                <td colspan="3" rowspan="2"><div class=row>${pt:wetSurname}</div></td>
+                <td colspan="2" rowspan="2"><div class="tg-cent">Nazwisko lekarza sprawującego opiekę nad stadem</div></td>
+                <td class="tg-cent" colspan="3" rowspan="2"><div class="row usrData">${pt:wetSurname}</div></td>
                 <td class="tg-20 tg-no_bot_bor tg-cent" colspan="2"><div class=row>Miejscowość</div></td>
                 <td class="tg-30 tg-no_bot_bor tg-cent" colspan="3"><div class=row>Nr telefonu lekarza</div></td>
             </tr>
             <tr class="tr-no_top_bor">
-                <td class="tg-20 tg-no_top_bor" colspan="2"><div class=row>${pt:wetCity}</div></td>
-                <td class="tg-30 tg-no_top_bor" colspan="3"><div class=row>${pt:wetPhoneNumber}</div></td>
+                <td class="tg-20 tg-no_top_bor tg-cent" colspan="2"><div class="row usrData">${pt:wetCity}</div></td>
+                <td class="tg-30 tg-no_top_bor tg-cent" colspan="3"><div class="row usrData">${pt:wetPhoneNumber}</div></td>
             </tr>
             <tr>
                 <td colspan="5" rowspan="4"><div class=row>Czy gospodarstwo było objęte rygorem zwalczania chorób zakaźnych i/lub stwierdzano choroby mogące mieć wpływ na bezpieczeństwo żywności</div></td>
@@ -245,20 +251,20 @@
             </tr>
             <tr>
                 <td colspan="2"><div class=row>Gatunek zwierząt</div></td>
-                <td colspan="3"><div class=row>${pt:treatRace}</div></td>
+                <td colspan="3"><div class="row usrData">${pt:treatRace}</div></td>
             </tr>
             <tr>
                 <td colspan="2"><div class=row>Choroba</div></td>
-                <td colspan="3"><div class=row>${pt:historicIssues}</div></td>
+                <td colspan="3"><div class="row usrData">${pt:historicIssues}</div></td>
             </tr>
             <tr>
                 <td colspan="2"><div class=row>Do kiedy</div></td>
-                <td colspan="3"><div class=row>${pt:historicDiseaseDurationTo}</div></td>
+                <td colspan="3"><div class="row usrData">${pt:historicDiseaseDurationTo}</div></td>
             </tr>
-            <tr>
+            <tr height="60px">
                 <td colspan="5"><div class=row>Czy u zwierząt poddanych dotychczas ubojowi stwierdzono choroby</div></td>
                 <td colspan="2"><input type="checkbox">${pt:ifAnyMedicalIssuesInButcheredHerds}</td>
-                <td colspan="3"><div class=row>Jeśli tak to jakie - ${pt:historicDiseaseInButcheredHerds}</div></td>
+                <td colspan="3"><div class=row>Jeśli tak to jakie: ${pt:historicDiseaseInButcheredHerds}</div></td>
             </tr>
             <tr>
                 <td colspan="5"><div class=row>Czy w gospodarstwie zapewniono dobrstan zwierząt</div></td>
@@ -270,23 +276,23 @@
                 <td class="tg-90 tg-cent tg-bold" colspan="9"><div class="row">Rodzaj paszy</div></td>
             </tr>
             <tr>
-                <td colspan="2"><div class=row>od ${pt:starterFeedTimeFrom}</div></td>
-                <td colspan="2"><div class=row>do ${pt:starterFeedTimeTo}</div></td>
-                <td colspan="6"><div class=row>Starter: ${pt:starterType}</div></td>
+                <td colspan="2"><div class="row usrData">od ${pt:starterFeedTimeFrom}</div></td>
+                <td colspan="2"><div class="row usrData">do ${pt:starterFeedTimeTo}</div></td>
+                <td colspan="6"><div class="row usrData">Starter: ${pt:starterType}</div></td>
             </tr>
             <tr>
-                <td colspan="2"><div class=row>od ${pt:growerFeedTimeFrom}</div></td>
-                <td colspan="2"><div class=row>do ${pt:growerFeedTimeTo}</div></td>
-                <td colspan="6"><div class=row>Grower: ${pt:growerType}</div></td>
+                <td colspan="2"><div class="row usrData">od ${pt:growerFeedTimeFrom}</div></td>
+                <td colspan="2"><div class="row usrData">do ${pt:growerFeedTimeTo}</div></td>
+                <td colspan="6"><div class="row usrData">Grower: ${pt:growerType}</div></td>
             </tr>
             <tr>
-                <td colspan="2"><div class=row>od ${pt:finisherFeedTimeFrom}</div></td>
-                <td colspan="2"><div class=row>do ${pt:finisherFeedTimeTo}</div></td>
-                <td colspan="6"><div class=row>Finiszer: ${pt:finisherType}</div></td>
+                <td colspan="2"><div class="row usrData">od ${pt:finisherFeedTimeFrom}</div></td>
+                <td colspan="2"><div class="row usrData">do ${pt:finisherFeedTimeTo}</div></td>
+                <td colspan="6"><div class="row usrData">Finiszer: ${pt:finisherType}</div></td>
             </tr>
             <tr>
                 <td colspan="5"><div class=row>Pochodzenie paszy otrzymanej przez zwierzęta</div></td>
-                <td colspan="5"><div class=row>${pt:foodSource}</div></td>
+                <td colspan="5"><div class="row usrData">${pt:foodSource}</div></td>
             </tr>
             <tr>
                 <td rowspan="3">Dodatki paszowe</td>
@@ -294,22 +300,22 @@
                 <td colspan="5"><div class="row tg-cent">Pasza</div></td>
             </tr>
             <tr>
-                <td colspan="4"><div class=row>${pt:foodExtras_1}</div></td>
-                <td colspan="5"><div class=row>starter: ${pt:starterName}</div></td>
+                <td colspan="4"><div class="row usrData">${pt:foodExtras_1}</div></td>
+                <td colspan="5"><div class="row usrData">starter: ${pt:starterName}</div></td>
             </tr>
             <tr>
-              <td colspan="4"><div class=row>${pt:foodExtras_2}</div></td>
-              <td colspan="5"><div class=row>grower: ${pt:growerName}</div></td>
+              <td colspan="4"><div class="row usrData">${pt:foodExtras_2}</div></td>
+              <td colspan="5"><div class="row usrData">grower: ${pt:growerName}</div></td>
             </tr>
-            <tr>
+            <tr height="60px">
               <td colspan="5"><div class=row>Czy na terenie gospodarstwa pobierano próbki do badań monitoringowych pozostałości biologicznych i chemicznych</div></td>
-              <td colspan="1"><div class=row></div><input type="checkbox">${pt:ifSamplesWereTaken}</td>
-              <td colspan="4"><div class=row></div>${pt:medicalSamplesBioOrChem}</td>
+              <td colspan="1"><div class="row usrData"><input type="checkbox">${pt:ifSamplesWereTaken}</div></td>
+              <td colspan="4"><div class="row usrData">${pt:medicalSamplesBioOrChem}</div></td>
             </tr>
             <tr>
                 <td colspan="5"><div class=row>Czy na terenie gospodarstwa stwierdzono wyniki dodatnie</div></td>
-                <td colspan="1"><div class=row></div><input type="checkbox">${pt:ifSamplesWarePositive}</td>
-                <td colspan="4"><div class=row></div>Jeśli tak to kiedy ${pt:whenSamplesWerePositive}</td>
+                <td colspan="1"><div class=row><input type="checkbox">${pt:ifSamplesWarePositive}</div></td>
+                <td colspan="4"><div class="row usrData">Jeśli tak to kiedy ${pt:whenSamplesWerePositive}</div></td>
             </tr>
             <tr>
                 <td class="tg-30 tg-no_bot_bor" colspan="3"><div class=row>Miejscowość</div></td>
@@ -317,8 +323,8 @@
                 <td class="tg-50 tg-no_bot_bor" colspan="5"><div class=row>Czytelny podpis właściciela - zarządzającego</div></td>
             </tr>
             <tr class="tg-double_high">
-                <td class="tg-30 tg-no_top_bor" rowspan="2" colspan="3"><div class=row>${pt:signCity}</div></td>
-                <td class="tg-20 tg-no_top_bor" rowspan="2" colspan="2"><div class=row>${pt:signDate}</div></td>
+                <td class="tg-30 tg-no_top_bor usrData" rowspan="2" colspan="3"><div class="row usrData">${pt:signCity}</div></td>
+                <td class="tg-20 tg-no_top_bor usrData" rowspan="2" colspan="2"><div class="row usrData">${pt:signDate}</div></td>
                 <td class="tg-50 tg-no_top_bor" rowspan="2" colspan="5"><div class="row"></div></td>
             </tr>
             </tbody>
