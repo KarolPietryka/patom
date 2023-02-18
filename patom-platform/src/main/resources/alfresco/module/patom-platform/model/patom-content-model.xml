@@ -123,90 +123,90 @@
                 </property>
 
                 <property name="pt:herdMedicals_1">
-                    <title>Nazwa stosowanego preparetu (preparet 1)</title>
+                    <title>Nazwa stosowanego preparatu (preparat 1)</title>
                     <type>d:text</type>
                     <default></default>
                 </property>
                 <property name="pt:herdMedicalsApplyingDatesFrom_1">
-                    <title>Czas podawania od (preparet 1)</title>
+                    <title>Czas podawania od (preparat 1)</title>
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicalsApplyingDatesTo_1">
-                    <title>Czas podawania do (preparet 1)</title>
+                    <title>Czas podawania do (preparat 1)</title>
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicalsTreatmentDates_1">
-                    <title>Kurencja do (preparet 1)</title>
+                    <title>Karnecja do (preparat 1)</title>
                     <type>d:date</type>
 
 
                 </property>
                 <property name="pt:herdMedicals_2">
-                    <title>Stosowane preparaty lecznicze (preparet 2)</title>
+                    <title>Stosowane preparaty lecznicze (preparat 2)</title>
                     <type>d:text</type>
                     <default></default>
                 </property>
                 <property name="pt:herdMedicalsApplyingDatesFrom_2">
-                    <title>Czas podawania od (preparet 2)</title>
+                    <title>Czas podawania od (preparat 2)</title>
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicalsApplyingDatesTo_2">
-                    <title>Czas podawania do (preparet 2)</title>
+                    <title>Czas podawania do (preparat 2)</title>
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicalsTreatmentDates_2">
-                    <title>Kurencja do (preparet 2)</title>
+                    <title>Karnecja do (preparat 2)</title>
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicals_3">
-                    <title>Stosowane preparaty lecznicze (preparet 3)</title>
+                    <title>Stosowane preparaty lecznicze (preparat 3)</title>
                     <type>d:text</type>
                     <default></default>
                 </property>
                 <property name="pt:herdMedicalsApplyingDatesFrom_3">
-                    <title>Czas podawania od (preparet 3)</title>
+                    <title>Czas podawania od (preparat 3)</title>
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicalsApplyingDatesTo_3">
-                    <title>Czas podawania do (preparet 3)</title>
+                    <title>Czas podawania do (preparat 3)</title>
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicalsTreatmentDates_3">
-                    <title>Kurencja do (preparet 3)</title>
+                    <title>Karnecja do (preparat 3)</title>
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicals_4">
-                    <title>Stosowane preparaty lecznicze (preparet 4)</title>
+                    <title>Stosowane preparaty lecznicze (preparat 4)</title>
                     <type>d:text</type>
                     <default></default>
                 </property>
                 <property name="pt:herdMedicalsApplyingDatesFrom_4">
-                    <title>Czas podawania od (preparet 4)</title>
+                    <title>Czas podawania od (preparat 4)</title>
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicalsApplyingDatesTo_4">
-                    <title>Czas podawania do (preparet 4)</title>
+                    <title>Czas podawania do (preparat 4)</title>
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicalsTreatmentDates_4">
-                    <title>Kurencja do (preparet 4)</title>
+                    <title>Karnecja do (preparat 4)</title>
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicals_5">
-                    <title>Stosowane preparaty lecznicze (preparet 5)</title>
+                    <title>Stosowane preparaty lecznicze (preparat 5)</title>
                     <type>d:text</type>
                     <default></default>
                 </property>
                 <property name="pt:herdMedicalsApplyingDatesFrom_5">
-                    <title>Czas podawania od (preparet 5)</title>
+                    <title>Czas podawania od (preparat 5)</title>
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicalsApplyingDatesTo_5">
-                    <title>Czas podawania do (preparet 5)</title>
+                    <title>Czas podawania do (preparat 5)</title>
                     <type>d:date</type>
                 </property>
                 <property name="pt:herdMedicalsTreatmentDates_5">
-                    <title>Kurencja do (preparet 5)</title>
+                    <title>Karnecja do (preparat 5)</title>
                     <type>d:date</type>
                 </property>
 
